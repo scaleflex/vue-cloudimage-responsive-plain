@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import { isServer, processReactNode } from "cloudimage-responsive-utils";
-
-import { getFilteredBgProps } from "./utils.js";
+import { isServer, processReactNode } from 'cloudimage-responsive-utils';
+import { getFilteredBgProps } from './utils.js';
 export default {
-  inject: ["cloudProvider"],
+  // geting the data from the provider
+  inject: ['cloudProvider'],
   props: {
     src: String,
     params: String,
@@ -23,33 +23,34 @@ export default {
   data() {
     return {
       server: isServer(),
-      cloudimgURL: "",
+      cloudimgURL: '',
       processed: false,
       loaded: false,
-      data: "",
+      data: '',
       properties: {
         src: this.src,
         params: this.params ? this.params : undefined,
         config: this.cloudProvider.config,
         style: this.styles
       },
-      combinedStyle: "",
-      container: "",
-      className: "",
-      lazyLoadConfig: "",
-      otherProps: "",
-      loadedStyle: ""
+      combinedStyle: '',
+      container: '',
+      className: '',
+      lazyLoadConfig: '',
+      otherProps: '',
+      loadedStyle: ''
     };
   },
   mounted() {
     if (this.server) return;
-    console.log(this.properties.style);
+
+    //initial loading style
+    this.loadedStyle = [this.className, 'cloudimage-background', 'loading'];
+    //initial value combinedstyle
     this.combinedStyle = {
       ...this.properties.style,
       backgroundImage: `url(${this.data.cloudimgURL})`
     };
-    const { className } = getFilteredBgProps(this.properties);
-    this.className = className;
 
     this.processBg();
   },
@@ -81,7 +82,7 @@ export default {
     }
   },
   watch: {
-    "properties.config.innerWidth": function(newVal, oldVal) {
+    'properties.config.innerWidth': function(newVal, oldVal) {
       const style = this.properties.style;
       const cloudimgURL = this.data.cloudimgURL;
       const previewCloudimgURL = this.data.previewCloudimgURL;
@@ -94,10 +95,11 @@ export default {
       } = this.properties;
 
       if (oldVal !== innerWidth) {
+        //if width changed update the data from proccesing background image
         this.processBg(true, innerWidth > oldVal);
       }
     },
-    "properties.src": function(newVal, oldVal) {
+    'properties.src': function(newVal, oldVal) {
       const { src } = this.properties;
       if (src !== oldVal.src) {
         this.processBg();
@@ -107,24 +109,27 @@ export default {
       const loaded = newVal;
       if (loaded) {
         const loaded = this.loaded;
+        //updating value of combined style if page loaded
         this.combinedStyle = {
           ...this.properties.style,
           backgroundImage: `url(${this.data.cloudimgURL})`
         };
-        this.loadedStyle = [this.className, "cloudimage-background", "loaded"]
-          .join(" ")
+        //if loaded change style to loaded
+        this.loadedStyle = [this.className, 'cloudimage-background', 'loaded']
+          .join(' ')
           .trim();
       } else {
-        this.loadedStyle = [this.className, "cloudimage-background", "loading"];
+        //if still loading change to loading
+        this.loadedStyle = [this.className, 'cloudimage-background', 'loading'];
       }
     },
 
-    "data.cloudimgURL": function(newVal) {
+    'data.cloudimgURL': function(newVal) {
       const {
         config: { delay }
       } = this.cloudProvider;
 
-      if (typeof delay !== "undefined") {
+      if (typeof delay !== 'undefined') {
         setTimeout(() => {
           this.preLoadImg(newVal);
         }, delay);

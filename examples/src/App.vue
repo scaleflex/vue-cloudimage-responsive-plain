@@ -704,6 +704,8 @@ import "prismjs/plugins/autolinker/prism-autolinker.min";
 import "prismjs/plugins/autolinker/prism-autolinker.css";
 import Prism from "vue-prism-component";
 
+
+//cloud configuration
 const cloudImageConfig = {
   token: "demo",
   baseURL: "https://cloudimage.public.airstore.io/demo/",
@@ -725,6 +727,7 @@ export default {
     BackgroundImg,
     Prism
   },
+   // passing to config to provider
   props: ["cloudimageConfig"],
   mounted() {
     const self = this;
