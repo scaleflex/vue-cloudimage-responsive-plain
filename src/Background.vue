@@ -98,6 +98,12 @@ export default {
         //if width changed update the data from proccesing background image
         this.processBg(true, innerWidth > oldVal);
       }
+
+      //update value combinedstyle when width changed
+      this.combinedStyle = {
+        ...this.properties.style,
+        backgroundImage: `url(${this.data.cloudimgURL})`
+      };
     },
     'properties.src': function(newVal, oldVal) {
       const { src } = this.properties;

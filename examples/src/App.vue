@@ -58,7 +58,7 @@
           <div class="actions-wrapper">
             <a
               id="view-github-btn"
-              href="https://github.com/scaleflex/react-cloudimage-responsive"
+              href="https://github.com/scaleflex/vue-cloudimage-responsive"
               class="btn btn-primary"
               target="_blank"
             >View on GitHub</a>
@@ -89,7 +89,7 @@
       </section>
       <section class="container-box-wrapper" style="margin: 0">
         <ContainerBox v-bind:config="cloudImageConfig" />
-        <Img v-bind:src="images[0].src" />
+        <Img v-bind:src="images[0].src"  />
       </section>
       <div style=" background: #fff">
         <section class="container ready-to-start">

@@ -3,9 +3,8 @@
     <img
       v-if="properties.config.lazyLoading"
       v-lazy="data.cloudimgURL"
+      :data-srcset="cloudimgSRCSET"
       v-bind:class="loadedStyle"
-      v-bind:src="data.cloudimgURL"
-      :srcset="cloudimgSRCSET"
       v-bind:alt="alt"
       @load="onImgLoad"
       v-bind="{ ...otherProps }"
@@ -51,7 +50,7 @@ export default {
       properties: {
         src: this.src,
         ratio: this.ratio,
-        sizes: this.sizes || {},
+        sizes: this.sizes,
         blurhash: this.blurhash,
         params: this.params,
         config: this.cloudProvider.config
@@ -87,17 +86,7 @@ export default {
       .join(' ')
       .trim();
 
-    const {
-      config: { delay }
-    } = this.cloudProvider;
-
-    if (typeof delay !== 'undefined') {
-      setTimeout(() => {
-        this.processImg();
-      }, delay);
-    } else {
-      this.processImg();
-    }
+    this.processImg();
 
     //the value from filter and passing to data
     this.alt = alt;
@@ -128,8 +117,10 @@ export default {
         windowScreenBecomesBigger,
         false
       );
-
-      this.data = data;
+      //if size is defined so data is defined if not error well appear
+      if (data) {
+        this.data = data;
+      }
     },
 
     onPreviewLoaded(event) {
@@ -163,6 +154,7 @@ export default {
 
       if (oldVal !== innerWidth) {
         //if width changed update the data from proccesing image
+
         this.processImg(true, innerWidth > oldVal);
       }
     },
