@@ -1,14 +1,18 @@
 <template>
   <div>
-    <img
-      v-if="properties.config.lazyLoading"
-      v-lazy="data.cloudimgURL"
-      :data-srcset="cloudimgSRCSET"
-      v-bind:class="loadedStyle"
-      v-bind:alt="alt"
-      @load="onImgLoad"
-      v-bind="{ ...otherProps }"
-    />
+    <lazy-component
+      v-if="properties.config.lazyLoading && lazyLoadActive"
+      @show="handler"
+    >
+      <img
+        :src="data.cloudimgURL"
+        :data-srcset="cloudimgSRCSET"
+        v-bind:class="loadedStyle"
+        v-bind:alt="alt"
+        @load="onImgLoad"
+        v-bind="{ ...otherProps }"
+      />
+    </lazy-component>
     <img
       v-else
       v-bind:class="loadedStyle"
@@ -40,6 +44,7 @@ export default {
     return {
       server: isServer(),
       BASE_64_PLACEHOLDER,
+      lazyLoadActive: true,
       cloudimgURL: '',
       processed: false,
       loaded: false,
@@ -107,6 +112,9 @@ export default {
     }
   },
   methods: {
+    handler(component) {
+      this.lazyLoadActive = false;
+    },
     processImg(update, windowScreenBecomesBigger) {
       const imgNode = this.$el;
 
@@ -170,7 +178,7 @@ export default {
         this.properties
       );
 
-      if (loaded) {
+      if (loaded === true) {
         //if  loaded change to loaded
         this.loadedStyle = [this.className, 'cloudimage-background', 'loaded']
           .join(' ')

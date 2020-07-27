@@ -1,6 +1,18 @@
 <template>
   <div>
-    <div :class="loadedStyle" :style="combinedStyle">
+    <!-- <lazy-compnent
+      v-if="properties.config.lazyLoading && lazyLoadActive"
+      @show="handler"
+    >
+      <div :class="loadedStyle" :style="combinedStyle">
+        <slot></slot>
+      </div>
+    </lazy-compnent> -->
+    <div
+      :class="loadedStyle"
+      v-lazy:background-image="this.data.cloudimgURL"
+      :style="combinedStyle"
+    >
       <slot></slot>
     </div>
     <div v-if="processed">
@@ -23,6 +35,7 @@ export default {
   data() {
     return {
       server: isServer(),
+      lazyLoadActive: '',
       cloudimgURL: '',
       processed: false,
       loaded: false,
@@ -55,6 +68,9 @@ export default {
     this.processBg();
   },
   methods: {
+    handler(component) {
+      this.lazyLoadActive = false;
+    },
     processBg(update, windowScreenBecomesBigger) {
       const bgNode = this.$el;
       const data = processReactNode(
