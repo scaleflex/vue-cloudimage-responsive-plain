@@ -1,15 +1,15 @@
-[![Release](https://img.shields.io/badge/release-v0.2.0-blue.svg)](https://github.com/scaleflex/react-cloudimage-responsive/releases)
+[![Release](https://img.shields.io/badge/release-v0.2.0-blue.svg)](https://github.com/scaleflex/vue-cloudimage-responsive/releases)
 [![Free plan](https://img.shields.io/badge/price-includes%20free%20plan-green.svg)](https://www.cloudimage.io/en/home#b38181a6-b9c8-4015-9742-7b1a1ad382d5)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](#contributing)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Scaleflex team](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-the%20Scaleflex%20team-6986fa.svg)](https://www.scaleflex.it/en/home)
 
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Responsive%20images,%20now%20easier%20than%20ever&url=https://scaleflex.github.io/react-cloudimage-responsive/&via=cloudimage&hashtags=react,images,cloudimage,responsive_images,lazy_loading,web_acceleration,image_optimization,image_CDN,image_CDNwebp,jpeg_xr,jpg_optimization,image_resizing_and_CDN,cropresize)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Responsive%20images,%20now%20easier%20than%20ever&url=https://scaleflex.github.io/vue-cloudimage-responsive-plain/&via=cloudimage&hashtags=vue,images,cloudimage,responsive_images,lazy_loading,web_acceleration,image_optimization,image_CDN,image_CDNwebp,jpeg_xr,jpg_optimization,image_resizing_and_CDN,cropresize)
 
 ## VERSIONS
 
-- [**Low Quality Preview**](https://github.com/scaleflex/react-cloudimage-responsive)
-- [**Blur Hash**](https://github.com/scaleflex/react-cloudimage-responsive-blur-hash)
+- [**Low Quality Preview**](https://github.com/scaleflex/vue-cloudimage-responsive)
+- [**Blur Hash**](https://github.com/scaleflex/vue-cloudimage-responsive-blur-hash)
 - **Plain (CSS free)**
 
 <p align="center">
@@ -31,9 +31,9 @@
 	<strong>
 		<a href="#table_of_contents">Docs</a>
 		•
-		<a href="https://github.com/scaleflex/vue-cloudimage-responsive/" target="_blank">Demo</a>
+		<a href="https://github.com/scaleflex/vue-cloudimage-responsive-plain/" target="_blank">Demo</a>
 		•
-		<a href="https://codesandbox.io/s/1840nl707j" target="_blank">Code Sandbox</a>
+		<a href="https://codesandbox.io/s/vue-cloudimage-resposnove-plain-example-2z2l7?file=/src/App.vue" target="_blank">Code Sandbox</a>
 		•
 		<a href="https://medium.com/@dmitry_82269/responsive-images-in-2019-now-easier-than-ever-b76e5a43c074" target="_blank">Why?</a>
 	</strong>
@@ -82,7 +82,7 @@ powered by [Cloudimage](https://www.cloudimage.io/)
 ## <a name="demo"></a> Demo
 
 To see the Cloudimage Responsive plugin in action, please check out the
-[Demo page](https://github.com/scaleflex/vue-cloudimage-responsive).
+[Demo page](https://github.com/scaleflex/vue-cloudimage-responsive-plain/).
 Play with your browser's window size and observe your
 Inspector's Network tab to see how Cloudimage delivers the optimal
 image size to your browser, hence accelerating the overall page
@@ -120,7 +120,6 @@ new Vue({
 ```
 
 ```jsx
-import Vue from 'vue';
 import Img, { CloudimageProvider } from 'vue-cloudimage-responsive-plain';
 
 const cloudimageConfig = {
@@ -130,7 +129,7 @@ const cloudimageConfig = {
 
 <template>
 <CloudimageProvider config={cloudimageConfig}>
- <h1>Simple demo of react-cloudimage-responsive</h1>
+ <h1>Simple demo of vue-cloudimage-responsive</h1>
 <Img src="img.jpg" alt="Demo image" />
 </CloudimageProvider>
 </template>
@@ -156,7 +155,7 @@ export default{
 NOTE: "ratio" is recommended to prevent page layout jumping. The parameter is used to calculate image height to hold
 the image position while image is loading.
 
-<a href="https://codesandbox.io/s/1840nl707j"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edeit in codesandbox"/></a>
+<a href="https://codesandbox.io/s/vue-cloudimage-resposnove-plain-example-2z2l7?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
 ### BackgroundImg component:
 
@@ -166,7 +165,7 @@ the image position while image is loading.
 </BackgroundImg>
 ```
 
-<a href="https://codesandbox.io/s/react-cloudimage-responsive-background-1nin8"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edeit in codesandbox"/></a>
+<a href="https://codesandbox.io/s/vue-cloudimage-responsive-background-ntdrm?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
 ## <a name="configuration"></a> Config
 
@@ -196,7 +195,7 @@ If set to **true** the plugin will only add query params to the given source of 
 ###### Type: **Bool** | Default: **true** | _optional_
 
 Only images close to the client's viewport will be loaded, hence accelerating the page loading time. The plugin uses
-[react-lazyload](https://github.com/twobin/react-lazyload) library to achieve it.
+[vue-lazyload](https://github.com/hilongjw/vue-lazyload) library to achieve it.
 
 ### lazyLoadOffset
 
@@ -412,15 +411,15 @@ Make it possible to disable lazyLoading for each image.
 
 ###### Type: **Object** | _optional_
 
-The lazyLoad configuration to [LazyLoad](https://github.com/twobin/react-lazyload#props) component.
+The lazyLoad configuration to [LazyLoad](https://github.com/hilongjw/vue-lazyload#props) component.
 
 To see the full cloudimage documentation [click here](https://docs.cloudimage.io/go/cloudimage-documentation)
 
 ## <a name="examples_workarounds"></a>Examples & workarounds
 
-- [See all](https://github.com/scaleflex/react-cloudimage-responsive/blob/master/examples/EXAMPLES.md)
-- [Cropping](https://github.com/scaleflex/react-cloudimage-responsive/blob/master/examples/EXAMPLES.md#cropping)
-- [Integration with Gatsby](https://github.com/scaleflex/react-cloudimage-responsive/blob/master/examples/EXAMPLES.md#integration-with-gatsby)
+- [See all](https://github.com/scaleflex/vue-cloudimage-responsive/blob/master/examples/EXAMPLES.md)
+- [Cropping](https://github.com/scaleflex/vue-cloudimage-responsive/blob/master/examples/EXAMPLES.md#cropping)
+- [Integration with Gatsby](https://github.com/scaleflex/vue-cloudimage-responsive/blob/master/examples/EXAMPLES.md#integration-with-gatsby)
 
 ## <a name="browser_support"></a>Browser support
 
@@ -440,4 +439,4 @@ All contributions are super welcome!
 
 ## <a name="license"></a>License
 
-React Cloudimage Responsive is provided under the [MIT License](https://opensource.org/licenses/MIT)
+Vue Cloudimage Responsive is provided under the [MIT License](https://opensource.org/licenses/MIT)
