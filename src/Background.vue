@@ -9,10 +9,14 @@
       </div>
     </lazy-compnent> -->
     <div
+      v-if="properties.config.lazyLoading"
       :class="loadedStyle"
       v-lazy:background-image="this.data.cloudimgURL"
-      :style="combinedStyle"
+      :style="this.properties.style"
     >
+      <slot></slot>
+    </div>
+    <div v-else :class="loadedStyle" :style="combinedStyle">
       <slot></slot>
     </div>
     <div v-if="processed">
