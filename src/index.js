@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import Img from './Img.vue';
 import BackgroundImg from './Background.vue';
 
