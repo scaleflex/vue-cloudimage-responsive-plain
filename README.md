@@ -31,7 +31,7 @@
 	<strong>
 		<a href="#table_of_contents">Docs</a>
 		•
-		<a href="https://github.com/scaleflex/vue-cloudimage-responsive-plain/" target="_blank">Demo</a>
+		<a href="https://scaleflex.github.io/vue-cloudimage-responsive-plain/" target="_blank">Demo</a>
 		•
 		<a href="https://codesandbox.io/s/vue-cloudimage-resposnove-plain-example-2z2l7?file=/src/App.vue" target="_blank">Code Sandbox</a>
 		•
@@ -165,7 +165,7 @@ the image position while image is loading.
 </BackgroundImg>
 ```
 
-<a href="https://codesandbox.io/s/vue-cloudimage-responsive-background-ntdrm?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
+<a href="https://codesandbox.io/s/vue-cloudimage-responsive-background-plain-ntdrm?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
 ## <a name="configuration"></a> Config
 
