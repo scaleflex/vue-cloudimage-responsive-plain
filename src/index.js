@@ -1,6 +1,6 @@
 import Img from './Img.vue';
 import BackgroundImg from './Background.vue';
-import CloudImageProvider from './provider.vue';
+import CloudImageProvider from './Provider.vue';
 
 export default Img;
 
