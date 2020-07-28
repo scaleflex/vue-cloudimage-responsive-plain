@@ -11,10 +11,10 @@ const config = merge(
     entry: {
       Background: ['./src/Background.vue'],
       Img: ['./src/Img.vue'],
-      CloudImageProvider: ['./src/Provider.vue']
+      CloudImageProvider: ['./src/CloudImageProvider.vue']
     },
     output: {
-      path: path.join(__dirname, 'dist'),
+      path: path.join(__dirname, 'src'),
       filename: options.isProduction ? '[name].min.js' : '[name].js',
       library: ['vue-cloudimage-responsive-plain', '[name]'],
       libraryTarget: 'umd'

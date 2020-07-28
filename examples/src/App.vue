@@ -722,7 +722,7 @@
 
 <script>
 import ContainerBox from './components/ContainerBox';
-import CloudImageProvider from '../../src/provider';
+import CloudImageProvider from '../../src/CloudimageProvider';
 import Img from '../../src/Img';
 import BackgroundImg from '../../src/background';
 import { images } from './mock';
