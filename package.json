@@ -1,6 +1,6 @@
 {
   "name": "vue-cloudimage-responsive-plain",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "main": "dist/index.js",
   "description": "Cloudimage Responsive will smartly resize, compress and accelerate images across the World in your site for all devices. The plugin supports lazy loading technique with blur hash placeholder.",
   "author": "scaleflex",
@@ -29,8 +29,9 @@
   "scripts": {
     "serve": "webpack-dev-server --mode development --config webpack-demo.config.js",
     "clean": "rimraf dist",
-    "dist": "npm run clean && webpack --mode production --config webpack-dist.config.js",
-    "buildjs": "babel src -d dist --copy-files",
+    "dist": "npm run clean && npm run build-js && npm run build-vue",
+    "build-vue": "webpack --mode production --config webpack-dist.config.js",
+    "build-js": "babel src -d dist --copy-files",
     "build-demo": "webpack --mode production",
     "deploy": "gh-pages -d examples/dist",
     "publish-demo": "npm run build-demo && npm run deploy"
