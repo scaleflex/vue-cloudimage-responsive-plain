@@ -722,9 +722,9 @@
 
 <script>
 import ContainerBox from './components/ContainerBox';
-import CloudImageProvider from '../../src/CloudimageProvider.vue';
-import Img from '../../src/Img.vue';
-import BackgroundImg from '../../src/Background.vue';
+import CloudImageProvider from '../../src/CloudimageProvider';
+import Img from '../../src/Img';
+import BackgroundImg from '../../src/Background';
 import { images } from './mock';
 import 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
