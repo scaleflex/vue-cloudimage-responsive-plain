@@ -1,6 +1,6 @@
-import Img from './Img.js';
-import BackgroundImg from './Background.js';
-import CloudImageProvider from './CloudImageProvider.js';
+import Img from './Img.vue';
+import BackgroundImg from './Background.vue';
+import CloudImageProvider from './CloudImageProvider.vue';
 
 
 export default Img;
