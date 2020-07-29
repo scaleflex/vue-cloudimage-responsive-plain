@@ -542,7 +542,7 @@
             <figure class="highlight">
               <pre>
                   <code class="javascript">
-                    npm install --save vue-cloudimage-responsive-plain
+                   npm install --save vue-cloudimage-responsive-plain vue-lazyload
                   </code>
                 </pre>
             </figure>
@@ -558,7 +558,8 @@
                 of your image storage using{{ ' ' }}
                 <strong>CloudimageProvider</strong>
               </p>
-              <Prism>{{ syntaxHighlight6 }}</Prism>
+              <Prism language="js">{{ syntaxHighlight6 }}</Prism>
+              <Prism>{{ syntaxHighlight7 }}</Prism>
               <p>
                 Get your Cloudimage tokens{{ ' ' }}
                 <a href="https://www.cloudimage.io/en/register_page">here</a>.
@@ -567,7 +568,7 @@
 
             <div class="action-wrapper third-action">
               <p>Implement it, just using the Img component:</p>
-              <prism>{{ syntaxHighlight7 }}</prism>
+              <prism>{{ syntaxHighlight8 }}</prism>
               <p>
                 <small>
                   NOTE: "ratio" is recommended to prevent page layout jumping.{'
@@ -800,7 +801,18 @@ export default {
   params="func=crop" 
   style="background: transparent 50% 50% / cover no-repeat">...</BackgroundImg>`,
 
-      syntaxHighlight6: `
+
+      syntaxHighlight6:`import Vue from 'vue';
+import App from './App.vue';
+import VueLazyload from 'vue-lazyload';
+
+Vue.use(VueLazyload, {
+  lazyComponent: true
+});
+new Vue({
+  render: h => h(App)
+}).$mount('#app');`,
+      syntaxHighlight7: `
 import Img, { CloudimageProvider } from 'vue-cloudimage-responsive-plain';
 
 const cloudimageConfig = {
@@ -825,7 +837,7 @@ const cloudimageConfig = {
 '
 < /script>
 `,
-      syntaxHighlight7: `
+      syntaxHighlight8: `
     <Img src="img.jpg" alt="Demo image"  />
 `,
 

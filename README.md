@@ -114,6 +114,11 @@ create vue instance a fle called main.js
 ```js
 import Vue from 'vue';
 import App from './App.vue';
+import VueLazyload from 'vue-lazyload';
+
+Vue.use(VueLazyload, {
+  lazyComponent: true
+});
 new Vue({
   render: h => h(App)
 }).$mount('#app');
