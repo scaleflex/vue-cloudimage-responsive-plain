@@ -540,14 +540,10 @@
           <div class="action-wrapper first-action">
             <p>Install using npm</p>
             <figure class="highlight">
-              <pre>
-                  <code class="javascript">
-                   npm install --save vue-cloudimage-responsive-plain vue-lazyload
-                  </code>
-                </pre>
+              <pre><code class="javascript">npm install --save vue-cloudimage-responsive-plain vue-lazyload</code></pre>
             </figure>
           </div>
-
+  
           <div>
             <div class="action-wrapper second-action">
               <p>
@@ -571,8 +567,8 @@
               <prism>{{ syntaxHighlight8 }}</prism>
               <p>
                 <small>
-                  NOTE: "ratio" is recommended to prevent page layout jumping.{'
-                  '} The parameter is used to calculate image height to hold the
+                  NOTE: "ratio" is recommended to prevent page layout jumping.{{
+                    ''}} The parameter is used to calculate image height to hold the
                   image position while image is loading.
                 </small>
               </p>
@@ -837,9 +833,7 @@ const cloudimageConfig = {
 '
 < /script>
 `,
-      syntaxHighlight8: `
-    <Img src="img.jpg" alt="Demo image"  />
-`,
+      syntaxHighlight8: `<Img src="img.jpg" alt="Demo image"/>`,
 
       images,
       imagesSliced,

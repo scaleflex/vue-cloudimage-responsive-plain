@@ -1,17 +1,7 @@
 <template>
   <div>
-    <lazy-component
-      v-if="properties.config.lazyLoading && lazyLoadActive"
-      @show="handler"
-    >
-      <img
-        :src="data.cloudimgURL"
-        :data-srcset="cloudimgSRCSET"
-        v-bind:class="loadedStyle"
-        v-bind:alt="alt"
-        @load="onImgLoad"
-        v-bind="{ ...otherProps }"
-      />
+    <lazy-component v-if="properties.config.lazyLoading && lazyLoadActive" @show="handler">
+      <img v-bind:class="loadedStyle" v-bind:alt="alt" @load="onImgLoad" v-bind="{ ...otherProps }" />
     </lazy-component>
     <img
       v-else
@@ -27,13 +17,13 @@
 </template>
 
 <script>
-import { isServer, processReactNode } from 'cloudimage-responsive-utils';
-import { BASE_64_PLACEHOLDER } from 'cloudimage-responsive-utils/dist/constants';
-import { getFilteredProps } from './utils';
+import { isServer, processReactNode } from "cloudimage-responsive-utils";
+import { BASE_64_PLACEHOLDER } from "cloudimage-responsive-utils/dist/constants";
+import { getFilteredProps } from "./utils";
 
 export default {
   // geting the data from the provider
-  inject: ['cloudProvider'],
+  inject: ["cloudProvider"],
   props: {
     src: String,
     ratio: Number,
@@ -45,13 +35,13 @@ export default {
       server: isServer(),
       BASE_64_PLACEHOLDER,
       lazyLoadActive: true,
-      cloudimgURL: '',
+      cloudimgURL: "",
       processed: false,
       loaded: false,
-      loadedImageWidth: '',
-      loadedImageHeight: '',
-      loadedImageRatio: '',
-      data: '',
+      loadedImageWidth: "",
+      loadedImageHeight: "",
+      loadedImageRatio: "",
+      data: "",
       properties: {
         src: this.src,
         ratio: this.ratio,
@@ -60,16 +50,16 @@ export default {
         params: this.params,
         config: this.cloudProvider.config
       },
-      alt: '',
-      className: '',
-      lazyLoadConfig: '',
-      preserveSize: '',
-      imgNodeWidth: '',
-      imgNodeHeight: '',
-      otherProps: '',
-      cloudimgSRCSET: '',
+      alt: "",
+      className: "",
+      lazyLoadConfig: "",
+      preserveSize: "",
+      imgNodeWidth: "",
+      imgNodeHeight: "",
+      otherProps: "",
+      cloudimgSRCSET: "",
 
-      loadedStyle: '',
+      loadedStyle: "",
       height: { height: 0 }
     };
   },
@@ -87,8 +77,8 @@ export default {
     } = getFilteredProps(this.properties);
 
     //initial loading style
-    this.loadedStyle = [this.className, 'cloudimage-background', 'loading']
-      .join(' ')
+    this.loadedStyle = [this.className, "cloudimage-background", "loading"]
+      .join(" ")
       .trim();
 
     this.processImg();
@@ -107,13 +97,15 @@ export default {
     if (this.data.cloudimgSRCSET) {
       const cloudimgSRCSET = this.data.cloudimgSRCSET
         .map(({ dpr, url }) => `${url} ${dpr}x`)
-        .join(', ');
+        .join(", ");
       this.cloudimgSRCSET = cloudimgSRCSET;
     }
   },
   methods: {
     handler(component) {
-      this.lazyLoadActive = false;
+      setTimeout(() => {
+        this.lazyLoadActive = false;
+      }, 100);
     },
     processImg(update, windowScreenBecomesBigger) {
       const imgNode = this.$el;
@@ -149,7 +141,7 @@ export default {
     }
   },
   watch: {
-    'properties.config.innerWidth': function(newVal, oldVal) {
+    "properties.config.innerWidth": function(newVal, oldVal) {
       if (this.server) return;
 
       const { preserveSize, imgNodeWidth, imgNodeHeight } = getFilteredProps(
@@ -166,7 +158,7 @@ export default {
         this.processImg(true, innerWidth > oldVal);
       }
     },
-    'properties.src': function(newVal, oldVal) {
+    "properties.src": function(newVal, oldVal) {
       const { src } = this.properties;
       if (src !== oldVal.src) {
         this.processImg();
@@ -180,13 +172,13 @@ export default {
 
       if (loaded === true) {
         //if  loaded change to loaded
-        this.loadedStyle = [this.className, 'cloudimage-background', 'loaded']
-          .join(' ')
+        this.loadedStyle = [this.className, "cloudimage-background", "loaded"]
+          .join(" ")
           .trim();
       } else {
         //if still loading change to loading
-        this.loadedStyle = [this.className, 'cloudimage-background', 'loading']
-          .join(' ')
+        this.loadedStyle = [this.className, "cloudimage-background", "loading"]
+          .join(" ")
           .trim();
       }
     }

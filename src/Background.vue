@@ -1,21 +1,10 @@
 <template>
   <div>
-    <!-- <lazy-compnent
-      v-if="properties.config.lazyLoading && lazyLoadActive"
-      @show="handler"
-    >
+    <lazy-component v-if="properties.config.lazyLoading && lazyLoadActive" @show="handler">
       <div :class="loadedStyle" :style="combinedStyle">
         <slot></slot>
       </div>
-    </lazy-compnent> -->
-    <div
-      v-if="properties.config.lazyLoading"
-      :class="loadedStyle"
-      v-lazy:background-image="this.data.cloudimgURL"
-      :style="this.properties.style"
-    >
-      <slot></slot>
-    </div>
+    </lazy-component>
     <div v-else :class="loadedStyle" :style="combinedStyle">
       <slot></slot>
     </div>
@@ -26,11 +15,11 @@
 </template>
 
 <script>
-import { isServer, processReactNode } from 'cloudimage-responsive-utils';
-import { getFilteredBgProps } from './utils.js';
+import { isServer, processReactNode } from "cloudimage-responsive-utils";
+import { getFilteredBgProps } from "./utils.js";
 export default {
   // geting the data from the provider
-  inject: ['cloudProvider'],
+  inject: ["cloudProvider"],
   props: {
     src: String,
     params: String,
@@ -39,30 +28,30 @@ export default {
   data() {
     return {
       server: isServer(),
-      lazyLoadActive: '',
-      cloudimgURL: '',
+      lazyLoadActive: true,
+      cloudimgURL: "",
       processed: false,
       loaded: false,
-      data: '',
+      data: "",
       properties: {
         src: this.src,
         params: this.params ? this.params : undefined,
         config: this.cloudProvider.config,
         style: this.styles
       },
-      combinedStyle: '',
-      container: '',
-      className: '',
-      lazyLoadConfig: '',
-      otherProps: '',
-      loadedStyle: ''
+      combinedStyle: "",
+      container: "",
+      className: "",
+      lazyLoadConfig: "",
+      otherProps: "",
+      loadedStyle: ""
     };
   },
   mounted() {
     if (this.server) return;
 
     //initial loading style
-    this.loadedStyle = [this.className, 'cloudimage-background', 'loading'];
+    this.loadedStyle = [this.className, "cloudimage-background", "loading"];
     //initial value combinedstyle
     this.combinedStyle = {
       ...this.properties.style,
@@ -74,6 +63,12 @@ export default {
   methods: {
     handler(component) {
       this.lazyLoadActive = false;
+
+      //initial value combinedstyle
+      this.combinedStyle = {
+        ...this.properties.style,
+        backgroundImage: `url(${this.data.cloudimgURL})`
+      };
     },
     processBg(update, windowScreenBecomesBigger) {
       const bgNode = this.$el;
@@ -84,11 +79,9 @@ export default {
         windowScreenBecomesBigger
       );
 
-      if (!data) {
-        return;
+      if (data) {
+        this.data = data;
       }
-
-      this.data = data;
     },
     preLoadImg(cloudimgURL) {
       const img = new Image();
@@ -102,7 +95,7 @@ export default {
     }
   },
   watch: {
-    'properties.config.innerWidth': function(newVal, oldVal) {
+    "properties.config.innerWidth": function(newVal, oldVal) {
       const style = this.properties.style;
       const cloudimgURL = this.data.cloudimgURL;
       const previewCloudimgURL = this.data.previewCloudimgURL;
@@ -125,7 +118,7 @@ export default {
         backgroundImage: `url(${this.data.cloudimgURL})`
       };
     },
-    'properties.src': function(newVal, oldVal) {
+    "properties.src": function(newVal, oldVal) {
       const { src } = this.properties;
       if (src !== oldVal.src) {
         this.processBg();
@@ -133,6 +126,7 @@ export default {
     },
     loaded: function(newVal) {
       const loaded = newVal;
+
       if (loaded) {
         const loaded = this.loaded;
         //updating value of combined style if page loaded
@@ -141,26 +135,28 @@ export default {
           backgroundImage: `url(${this.data.cloudimgURL})`
         };
         //if loaded change style to loaded
-        this.loadedStyle = [this.className, 'cloudimage-background', 'loaded']
-          .join(' ')
+        this.loadedStyle = [this.className, "cloudimage-background", "loaded"]
+          .join(" ")
           .trim();
       } else {
         //if still loading change to loading
-        this.loadedStyle = [this.className, 'cloudimage-background', 'loading'];
+        this.loadedStyle = [this.className, "cloudimage-background", "loading"];
       }
     },
 
-    'data.cloudimgURL': function(newVal) {
-      const {
-        config: { delay }
-      } = this.cloudProvider;
+    lazyLoadActive: function() {
+      if (!this.lazyLoadActive) {
+        const {
+          config: { delay }
+        } = this.cloudProvider;
 
-      if (typeof delay !== 'undefined') {
-        setTimeout(() => {
-          this.preLoadImg(newVal);
-        }, delay);
-      } else {
-        this.preLoadImg(newVal);
+        if (typeof delay !== "undefined") {
+          setTimeout(() => {
+            this.preLoadImg(this.data.cloudimgURL);
+          }, delay);
+        } else {
+          this.preLoadImg(this.data.cloudimgURL);
+        }
       }
     }
   }
