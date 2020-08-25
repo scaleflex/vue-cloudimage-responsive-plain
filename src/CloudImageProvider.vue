@@ -33,7 +33,7 @@ export default {
         params: processParams(this.cloudImageConfig.params),
         innerWidth: typeof window !== 'undefined' ? window.innerWidth : null,
         previewQualityFactor: 10,
-        doNotReplaceURL: false,
+        doNotReplaceURL: this.cloudImageConfig.doNotReplaceURL || false,
         devicePixelRatioList: CONSTANTS.DEVICE_PIXEL_RATIO_LIST,
         limitFactor: this.cloudImageConfig.limitFactor,
         xs: '(max-width: 575px)',
