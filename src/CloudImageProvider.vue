@@ -54,6 +54,13 @@ export default {
       );
     }
   },
+   beforeDestroy() {
+   window.removeEventListener(
+     'resize', 
+    debounce(100, () => {
+          this.config.innerWidth = window.innerWidth;
+    }));
+  },
 
   // to able to use the data in image and background
   provide() {
