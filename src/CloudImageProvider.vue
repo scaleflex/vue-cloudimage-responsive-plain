@@ -13,13 +13,12 @@ export default {
   data() {
     return {
       config: {
-        token: this.cloudImageConfig.token,
+        token: this.cloudImageConfig.token || '',
         domain: 'cloudimg.io',
-        lazyLoading: true,
-        lazyLoadOffset: 100,
-        placeholderBackground: '#f4f4f4',
+        lazyLoading:  this.cloudImageConfig.lazyLoading || true,
+        lazyLoadOffset:  this.cloudImageConfig.lazyLoadOffset || 100,
+        placeholderBackground: this.cloudImageConfig.placeholderBackground || '#f4f4f4',
         baseURL: this.cloudImageConfig.baseUrl || this.cloudImageConfig.baseURL,
-        ratio: 1.5,
         exactSize: false,
         presets: this.cloudImageConfig.presets
           ? this.cloudImageConfig.presets
@@ -34,8 +33,8 @@ export default {
         innerWidth: typeof window !== 'undefined' ? window.innerWidth : null,
         previewQualityFactor: 10,
         doNotReplaceURL: this.cloudImageConfig.doNotReplaceURL || false,
-        devicePixelRatioList: CONSTANTS.DEVICE_PIXEL_RATIO_LIST,
-        limitFactor: this.cloudImageConfig.limitFactor,
+        devicePixelRatioList: this.cloudImageConfig.devicePixelRatioList || CONSTANTS.DEVICE_PIXEL_RATIO_LIST,
+        limitFactor: this.cloudImageConfig.limitFactor || 100,
         xs: '(max-width: 575px)',
         sm: '(min-width: 576px)',
         md: '(min-width: 768px)',

@@ -95,7 +95,7 @@
       </section>
       <section class="container-box-wrapper" style="margin: 0">
         <ContainerBox v-bind:config="cloudImageConfig" />
-        <Img v-bind:src="images[0].src" />
+        <Img v-bind:src="images[0].src"  />
       </section>
       <div style=" background: #fff">
         <section class="container ready-to-start">
@@ -737,10 +737,8 @@ const cloudImageConfig = {
   params: 'ci_info=1&org_if_sml=1',
   placeholderBackground: '#e1e1e1',
   limitFactor: 10,
-  lowQualityPreview: {
-    minImgWidth: 150
-  }
-};
+  
+  };
 
 const imagesSliced = images.slice(1, 7);
 export default {
