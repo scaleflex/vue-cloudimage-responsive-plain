@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <lazy-component v-if="properties.config.lazyLoading && lazyLoadActive" @show="handler">
+    <div v-if="processed">
+      <slot></slot>
+    </div>
+    <lazy-component v-else-if="properties.config.lazyLoading && lazyLoadActive" @show="handler">
       <div :class="loadedStyle" :style="combinedStyle">
         <slot></slot>
       </div>
@@ -8,10 +10,8 @@
     <div v-else :class="loadedStyle" :style="combinedStyle">
       <slot></slot>
     </div>
-    <div v-if="processed">
-      <slot></slot>
-    </div>
-  </div>
+   
+  
 </template>
 
 <script>

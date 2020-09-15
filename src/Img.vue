@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <lazy-component v-if="properties.config.lazyLoading && lazyLoadActive" @show="handler">
+    <img v-if="server" :alt="alt" :src="BASE_64_PLACEHOLDER" />
+    <lazy-component v-else-if="!server && properties.config.lazyLoading && lazyLoadActive" @show="handler">
       <img v-bind:class="loadedStyle" v-bind:alt="alt" @load="onImgLoad" v-bind="{ ...otherProps }" />
     </lazy-component>
     <img
@@ -11,8 +11,6 @@
       v-bind:alt="alt"
       @load="onImgLoad"
     />
-    <img v-if="server" :alt="alt" :src="BASE_64_PLACEHOLDER" />
-  </div>
 </template>
 
 <script>
@@ -78,7 +76,7 @@ export default {
 
     this.processImg();
 
-  
+   console.log(this)
 
   },
   updated() {
