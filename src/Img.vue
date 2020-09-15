@@ -76,7 +76,7 @@ export default {
 
     this.processImg();
 
-   console.log(this)
+  
 
   },
   updated() {
