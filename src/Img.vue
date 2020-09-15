@@ -10,7 +10,6 @@
       :srcset="cloudimgSRCSET"
       v-bind:alt="alt"
       @load="onImgLoad"
-      v-bind="{ ...otherProps }"
     />
     <img v-if="server" :alt="alt" :src="BASE_64_PLACEHOLDER" />
   </div>
@@ -19,16 +18,22 @@
 <script>
 import { isServer, processReactNode } from "cloudimage-responsive-utils";
 import { BASE_64_PLACEHOLDER } from "cloudimage-responsive-utils/dist/constants";
-import { getFilteredProps } from "./utils";
+
 
 export default {
   // geting the data from the provider
   inject: ["cloudProvider"],
   props: {
     src: String,
-    ratio: Number,
+    width: String,
+    height: String,
+    params: String,
     sizes: Object,
-    params: String
+    ratio: Number,
+    lazyLoading: Boolean,
+    lazyLoadConfig: Object,
+    alt: String,
+    className: String
   },
   data() {
     return {
@@ -44,37 +49,27 @@ export default {
       data: "",
       properties: {
         src: this.src,
-        ratio: this.ratio,
-        sizes: this.sizes,
-        blurhash: this.blurhash,
+        width: this.width,
+        height: this.height,
         params: this.params,
+        sizes: this.sizes,
+        ratio: this.ratio,
+        lazyLoading: this.lazyLoading,
+        lazyLoadConfig: this.lazyLoadConfig,
+        alt: this.alt,
+        className: this.className,
         config: this.cloudProvider.config
       },
-      alt: "",
-      className: "",
-      lazyLoadConfig: "",
       preserveSize: "",
       imgNodeWidth: "",
       imgNodeHeight: "",
       otherProps: "",
       cloudimgSRCSET: "",
-
-      loadedStyle: "",
-      height: { height: 0 }
+      loadedStyle: ""
     };
   },
   mounted() {
     if (this.server) return;
-
-    const {
-      alt,
-      className,
-      lazyLoadConfig,
-      preserveSize,
-      imgNodeWidth,
-      imgNodeHeight,
-      ...otherProps
-    } = getFilteredProps(this.properties);
 
     //initial loading style
     this.loadedStyle = [this.className, "cloudimage-background", "loading"]
@@ -83,14 +78,8 @@ export default {
 
     this.processImg();
 
-    //the value from filter and passing to data
-    this.alt = alt;
-    this.className = className;
-    this.lazyLoadConfig = lazyLoadConfig;
-    this.preserveSize = preserveSize;
-    this.imgNodeWidth = imgNodeWidth;
-    this.imgNodeHeight = imgNodeHeight;
-    this.otherProps = { ...otherProps };
+  
+
   },
   updated() {
     //srcset value after processing image
@@ -144,10 +133,6 @@ export default {
     "properties.config.innerWidth": function(newVal, oldVal) {
       if (this.server) return;
 
-      const { preserveSize, imgNodeWidth, imgNodeHeight } = getFilteredProps(
-        this.properties
-      );
-
       const {
         config: { innerWidth }
       } = this.properties;
@@ -166,10 +151,7 @@ export default {
     },
     loaded: function(newVal) {
       const loaded = newVal;
-      const { preserveSize, imgNodeWidth, imgNodeHeight } = getFilteredProps(
-        this.properties
-      );
-
+   
       if (loaded === true) {
         //if  loaded change to loaded
         this.loadedStyle = [this.className, "cloudimage-background", "loaded"]

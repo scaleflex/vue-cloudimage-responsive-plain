@@ -16,14 +16,22 @@
 
 <script>
 import { isServer, processReactNode } from "cloudimage-responsive-utils";
-import { getFilteredBgProps } from "./utils.js";
+
 export default {
   // geting the data from the provider
   inject: ["cloudProvider"],
   props: {
     src: String,
     params: String,
-    styles: Object
+    styles: Object,
+    width: String,
+    height: String,
+    sizes: Object,
+    ratio: Number,
+    lazyLoading: Boolean,
+    lazyLoadConfig: Object,
+    alt: String,
+    className: String
   },
   data() {
     return {
@@ -37,13 +45,18 @@ export default {
         src: this.src,
         params: this.params ? this.params : undefined,
         config: this.cloudProvider.config,
-        style: this.styles
+        style: this.styles,
+        width: this.width,
+        height: this.height,
+        sizes: this.sizes,
+        ratio: this.ratio,
+        lazyLoading: this.lazyLoading,
+        lazyLoadConfig: this.lazyLoadConfig,
+        alt: this.alt,
+        className: this.className,
       },
       combinedStyle: "",
       container: "",
-      className: "",
-      lazyLoadConfig: "",
-      otherProps: "",
       loadedStyle: ""
     };
   },
