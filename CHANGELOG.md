@@ -29,7 +29,7 @@ Types of changes:
 
 ---
 
-## 1.0.2 - 2020-04-29
+## 1.0.2 - 2020-09-29
 
 ### Changed
 - how props are passed to image and background
