@@ -1,10 +1,12 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Types of changes:
+
 - `Added` for new features.
 - `Changed` for changes in existing functionality.
 - `Deprecated` for soon-to-be removed features.
@@ -17,11 +19,17 @@ Types of changes:
 > If we have some "Breaking changes" we can mark it in message by `**BREAKING**` preffix, like:  
 > `- **BREAKING**: Some message`
 
--------------
+---
 
 ## TODOs
+
 > Todo list for future
 
 - ...
 
--------------
+---
+
+## 1.0.2 - 2020-04-29
+
+### Changed
+- how props are passed to image and background
