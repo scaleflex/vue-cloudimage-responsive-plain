@@ -112,16 +112,16 @@ of your image storage with **CloudimageProvider**:
 create vue instance a fle called main.js
 
 ```js
-import Vue from 'vue';
-import App from './App.vue';
-import VueLazyload from 'vue-lazyload';
+import Vue from 'vue'
+import App from './App.vue'
+import VueLazyload from 'vue-lazyload'
 
 Vue.use(VueLazyload, {
   lazyComponent: true
-});
+})
 new Vue({
   render: h => h(App)
-}).$mount('#app');
+}).$mount('#app')
 ```
 
 ```jsx
@@ -133,7 +133,7 @@ const cloudimageConfig = {
 };
 
 <template>
-<CloudimageProvider config={cloudimageConfig}>
+<CloudimageProvider  v-bind:cloudImageConfig="cloudimageConfig">
  <h1>Simple demo of vue-cloudimage-responsive</h1>
 <Img src="img.jpg" alt="Demo image" />
 </CloudimageProvider>
@@ -154,11 +154,12 @@ export default{
 ### Img component:
 
 ```html
-<img src="img.jpg" alt="Demo image" />
+<Img src="img.jpg" alt="Demo image" />
 ```
 
 NOTE: "ratio" is recommended to prevent page layout jumping. The parameter is used to calculate image height to hold
 the image position while image is loading.
+- you can also reference it with kabab-case : img
 
 <a href="https://codesandbox.io/s/vue-cloudimage-resposnove-plain-example-2z2l7?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
@@ -169,6 +170,7 @@ the image position while image is loading.
   {'Your conent...'}
 </BackgroundImg>
 ```
+NOTE: you can also reference it with kabab-case : background-img
 
 <a href="https://codesandbox.io/s/vue-cloudimage-responsive-background-plain-ntdrm?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
@@ -220,7 +222,7 @@ Applies default Cloudimage operations/ filters to your image, e.g. brightness, c
 Multiple params can be applied, separated by "`&`" e.g. wat_scale=35&wat_gravity=northeast&wat_pad=10&grey=1
 
 ```javascript
-params: 'org_if_sml=1';
+params: 'org_if_sml=1'
 ```
 
 #### alternative syntax: type: **Object**
@@ -343,7 +345,7 @@ You can apply any Cloudimage operations/ filters to your image, e.g. brightness,
 Multiple params can be applied, separated by "`&`" e.g. **wat_scale=35&wat_gravity=northeast&wat_pad=10&grey=1**
 
 ```javascript
-params = 'gray=1&bright=10';
+params = 'gray=1&bright=10'
 ```
 
 #### alternative syntax: type: **Object**
@@ -406,17 +408,7 @@ detect the width of image container and set the image size accordingly. This is 
 It is recommended to prevent page layout jumping. The parameter is used to calculate image height to hold
 the image position while image is loading.
 
-### lazyLoading
 
-###### Type: **Bool** | _optional_
-
-Make it possible to disable lazyLoading for each image.
-
-### lazyLoadConfig
-
-###### Type: **Object** | _optional_
-
-The lazyLoad configuration to [LazyLoad](https://github.com/hilongjw/vue-lazyload#props) component.
 
 To see the full cloudimage documentation [click here](https://docs.cloudimage.io/go/cloudimage-documentation)
 

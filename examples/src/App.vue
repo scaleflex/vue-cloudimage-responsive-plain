@@ -6,8 +6,7 @@
           <a
             class="logo"
             href="https://scaleflex.github.io/vue-cloudimage-responsive-plain/"
-            >Vue Cloudimage Responsive</a
-          >
+          >Vue Cloudimage Responsive</a>
           <p>(Plain version)</p>
           <div class="reference-buttons">
             <a
@@ -16,24 +15,21 @@
               href="https://github.com/Scaleflex/vue-cloudimage-responsive-plain/subscription"
               data-icon="octicon-eye"
               aria-label="Watch Scaleflex/vue-cloudimage-responsive-plain on GitHub"
-              >Watch</a
-            >
+            >Watch</a>
             <a
               class="github-button"
               target="_blank"
               href="https://github.com/Scaleflex/vue-cloudimage-responsive-plain"
               data-icon="octicon-star"
               aria-label="Star Scaleflex/vue-cloudimage-responsive-plain on GitHub"
-              >Star</a
-            >
+            >Star</a>
             <a
               class="github-button"
               target="_blank"
               href="https://github.com/Scaleflex/vue-cloudimage-responsiv-plaine/fork"
               data-icon="octicon-repo-forked"
               aria-label="Fork Scaleflex/vue-cloudimage-responsive-plain on GitHub"
-              >Fork</a
-            >
+            >Fork</a>
             <a
               class="twitter-share-button btn btn-info"
               target="_blank"
@@ -43,7 +39,9 @@
               <span>Tweet</span>
             </a>
           </div>
-          <h1><strong>Responsive images</strong>, now easier than ever.</h1>
+          <h1>
+            <strong>Responsive images</strong>, now easier than ever.
+          </h1>
           <h2>
             Make your existing images
             <strong>responsive</strong> without creating new images.
@@ -51,7 +49,8 @@
             one high quality original image and the plugin will{{ ' ' }}
             <strong>resize, compress and accelerate</strong>
             images across the World in your site for all devices. The plugin
-            supports{{ ' ' }} <strong>lazy load</strong> with
+            supports{{ ' ' }}
+            <strong>lazy load</strong> with
             <strong>fancy animation</strong>
             {{ ' ' }}
             on image load.
@@ -62,21 +61,16 @@
               href="https://github.com/scaleflex/vue-cloudimage-responsive-plain"
               class="btn btn-primary"
               target="_blank"
-              >View on GitHub</a
-            >
+            >View on GitHub</a>
             <a
               href="https://codesandbox.io/s/vue-cloudimage-resposnove-plain-example-2z2l7?file=/src/App.vue"
               style="margin-left: 5px"
               class="btn btn-light"
               target="_blank"
-              >Edit on CodeSandbox</a
-            >
+            >Edit on CodeSandbox</a>
           </div>
         </div>
-        <a
-          href="https://github.com/scaleflex/vue-cloudimage-responsive-plain"
-          target="_blank"
-        >
+        <a href="https://github.com/scaleflex/vue-cloudimage-responsive-plain" target="_blank">
           <img
             class="fork-me-on-github"
             src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
@@ -95,7 +89,7 @@
       </section>
       <section class="container-box-wrapper" style="margin: 0">
         <ContainerBox v-bind:config="cloudImageConfig" />
-        <Img v-bind:src="images[0].src"  />
+        <Img v-bind:src="images[0].src" />
       </section>
       <div style=" background: #fff">
         <section class="container ready-to-start">
@@ -104,7 +98,8 @@
           <ul>
             <li>
               <strong>Resize large images</strong> to the size needed by your
-              design and <strong>generate multiple images</strong> for different
+              design and
+              <strong>generate multiple images</strong> for different
               device screen size
             </li>
             <li>
@@ -129,7 +124,8 @@
         <p>
           The plugin detects the
           <strong>width of image's container</strong>
-          {{ ' ' }} and <strong>pixel ratio density</strong> of your device to
+          {{ ' ' }} and
+          <strong>pixel ratio density</strong> of your device to
           load the exact image size you need. It
           <strong>processes</strong>
           images via{{ ' ' }}
@@ -154,8 +150,7 @@
           Read the following{{ ' ' }}
           <a
             href="https://medium.com/cloudimage/cloudimage-resizes-your-images-saves-time-accelerates-your-website-and-increases-your-conversion-eb128903d4c2"
-            >article</a
-          >
+          >article</a>
           {{ ' ' }} to learn more about Cloudimage.io service.
         </p>
       </section>
@@ -174,8 +169,7 @@
             <a
               target="_blank"
               href="https://cdn.scaleflex.it/demo/redcharlie.jpg"
-              >link</a
-            >
+            >link</a>
             {{ ' ' }}
             In the table below we can see what size and resolution will be
             loaded depending on the image's container.
@@ -200,8 +194,7 @@
                   <a
                     target="_blank"
                     href="https://demo.cloudimg.io/width/400/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  >link</a>
                 </td>
               </tr>
               <tr>
@@ -212,8 +205,7 @@
                   <a
                     target="_blank"
                     href="https://demo.cloudimg.io/width/800/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  >link</a>
                 </td>
               </tr>
 
@@ -226,8 +218,7 @@
                   <a
                     target="_blank"
                     href="https://demo.cloudimg.io/width/600/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  >link</a>
                 </td>
               </tr>
               <tr>
@@ -238,8 +229,7 @@
                   <a
                     target="_blank"
                     href="https://demo.cloudimg.io/width/1200/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  >link</a>
                 </td>
               </tr>
 
@@ -252,8 +242,7 @@
                   <a
                     target="_blank"
                     href="https://demo.cloudimg.io/width/800/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  >link</a>
                 </td>
               </tr>
               <tr>
@@ -264,8 +253,7 @@
                   <a
                     target="_blank"
                     href="https://demo.cloudimg.io/width/1600/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  >link</a>
                 </td>
               </tr>
 
@@ -278,8 +266,7 @@
                   <a
                     target="_blank"
                     href="https://demo.cloudimg.io/width/1200/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  >link</a>
                 </td>
               </tr>
               <tr>
@@ -290,8 +277,7 @@
                   <a
                     target="_blank"
                     href="https://demo.cloudimg.io/width/2400/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  >link</a>
                 </td>
               </tr>
             </tbody>
@@ -333,11 +319,7 @@
               </div>
             </div>
 
-            <div
-              v-for="(image, index) in imagesSliced"
-              :key="index"
-              class="col-6"
-            >
+            <div v-for="(image, index) in imagesSliced" :key="index" class="col-6">
               <div class="container-box-wrapper">
                 <ContainerBox />
                 <Img v-bind:src="image.src" />original:
@@ -348,8 +330,7 @@
                     'https://cloudimage.public.airstore.io/demo/' + image.src
                   "
                   target="_blank"
-                  >link</a
-                >
+                >link</a>
                 <br />
               </div>
             </div>
@@ -377,8 +358,7 @@
                       images[18].src
                   "
                   target="_blank"
-                  >link</a
-                >
+                >link</a>
                 <br />
               </small>
             </div>
@@ -404,7 +384,8 @@
                 <div style=" width: 200px">
                   <div class="container-width-box">
                     container
-                    <span>200</span>x <span>200</span>px
+                    <span>200</span>x
+                    <span>200</span>px
                   </div>
                 </div>
                 <div
@@ -429,7 +410,8 @@
                 <div style=" width: 200px">
                   <div class="container-width-box">
                     container
-                    <span>200</span>x <span>200</span>px
+                    <span>200</span>x
+                    <span>200</span>px
                   </div>
                 </div>
 
@@ -455,7 +437,8 @@
                 <div style="width: 200px">
                   <div class="container-width-box">
                     container
-                    <span>200</span>x <span>200</span>px
+                    <span>200</span>x
+                    <span>200</span>px
                   </div>
                 </div>
                 <div
@@ -514,7 +497,9 @@
         <p>
           To use the plugin, you will need a Cloudimage token. Don't worry, it
           only takes seconds to get one by registering{{ ' ' }}
-          <a href="https://www.cloudimage.io/en/register_page">here</a>. Once
+          <a
+            href="https://www.cloudimage.io/en/register_page"
+          >here</a>. Once
           your token is created, you can configure it as described below. This
           token allows you to use 25GB of image cache and 25GB of worldwide CDN
           traffic per month for free.
@@ -522,18 +507,12 @@
       </section>
       <section class="container">
         <div class="text-center">
-          <div
-            id="plugin-version-switcher"
-            class="plugin-version-switcher btn-group btn-toggle"
-          ></div>
+          <div id="plugin-version-switcher" class="plugin-version-switcher btn-group btn-toggle"></div>
         </div>
       </section>
       <section class="container">
         <div class="text-center">
-          <div
-            id="plugin-version-switcher"
-            class="plugin-version-switcher btn-group btn-toggle"
-          ></div>
+          <div id="plugin-version-switcher" class="plugin-version-switcher btn-group btn-toggle"></div>
         </div>
 
         <div id="js-version-box">
@@ -543,7 +522,7 @@
               <pre><code class="javascript">npm install --save vue-cloudimage-responsive-plain vue-lazyload</code></pre>
             </figure>
           </div>
-  
+
           <div>
             <div class="action-wrapper second-action">
               <p>
@@ -558,7 +537,9 @@
               <Prism>{{ syntaxHighlight7 }}</Prism>
               <p>
                 Get your Cloudimage tokens{{ ' ' }}
-                <a href="https://www.cloudimage.io/en/register_page">here</a>.
+                <a
+                  href="https://www.cloudimage.io/en/register_page"
+                >here</a>.
               </p>
             </div>
 
@@ -568,7 +549,7 @@
               <p>
                 <small>
                   NOTE: "ratio" is recommended to prevent page layout jumping.{{
-                    ''}} The parameter is used to calculate image height to hold the
+                  ''}} The parameter is used to calculate image height to hold the
                   image position while image is loading.
                 </small>
               </p>
@@ -580,8 +561,7 @@
                 <a
                   href="https://github.com/scaleflex/vue-cloudimage-responsive-plain#table-of-contents"
                   target="_blank"
-                  >{{ ' ' }} Visit the full documentation here.</a
-                >
+                >{{ ' ' }} Visit the full documentation here.</a>
               </p>
             </div>
           </div>
@@ -616,36 +596,31 @@
                     <a
                       target="_blank"
                       href="https://github.com/scaleflex/js-cloudimage-responsive"
-                      >JS Cloudimage Responsive</a
-                    >
+                    >JS Cloudimage Responsive</a>
                   </li>
                   <li>
                     <a
                       target="_blank"
                       href="https://github.com/scaleflex/ng-cloudimage-responsive"
-                      >Angular Cloudimage Responsive</a
-                    >
+                    >Angular Cloudimage Responsive</a>
                   </li>
                   <li>
                     <a
                       target="_blank"
                       href="https://github.com/scaleflex/js-cloudimage-360-view"
-                      >JS Cloudimage 360 view</a
-                    >
+                    >JS Cloudimage 360 view</a>
                   </li>
                   <li>
                     <a
                       target="_blank"
                       href="https://github.com/scaleflex/filerobot-uploader"
-                      >Uploader</a
-                    >
+                    >Uploader</a>
                   </li>
                   <li>
                     <a
                       target="_blank"
                       href="https://github.com/scaleflex/filerobot-image-editor"
-                      >Image Editor</a
-                    >
+                    >Image Editor</a>
                   </li>
                 </ul>
               </div>
@@ -660,16 +635,18 @@
                 <div>
                   Made with ❤ in 2019 in Paris, Munich and Sofia by the
                   Scaleflex team, the guys behind{{ ' ' }}
-                  <a href="https://www.cloudimage.io/en/home" target="_blank"
-                    >Cloudimage.io</a
-                  >
+                  <a
+                    href="https://www.cloudimage.io/en/home"
+                    target="_blank"
+                  >Cloudimage.io</a>
                   .
                 </div>
                 <div style="margin-top: 10px ">
                   Powered by{{ ' ' }}
-                  <a href="https://www.scaleflex.it/en/home" target="_blank"
-                    >Scaleflex team</a
-                  >
+                  <a
+                    href="https://www.scaleflex.it/en/home"
+                    target="_blank"
+                  >Scaleflex team</a>
                   . All rights reserved.
                 </div>
               </div>
@@ -679,22 +656,19 @@
                     <a
                       href="https://github.com/scaleflex/vue-cloudimage-responsive-plain"
                       target="_blank"
-                      >View GitHub</a
-                    >
+                    >View GitHub</a>
                   </li>
                   <li>
                     <a
                       href="https://github.com/scaleflex/vue-cloudimage-responsive-plain/issues"
                       target="_blank"
-                      >Current Issues</a
-                    >
+                    >Current Issues</a>
                   </li>
                   <li>
                     <a
                       href="https://github.com/scaleflex/vue-cloudimage-responsive-plain#table-of-contents"
                       target="_blank"
-                      >Documentation</a
-                    >
+                    >Documentation</a>
                   </li>
                 </ul>
               </div>
@@ -718,31 +692,30 @@
 </template>
 
 <script>
-import ContainerBox from './components/ContainerBox';
-import CloudImageProvider from '../../src/CloudimageProvider';
-import Img from '../../src/Img';
-import BackgroundImg from '../../src/Background';
-import { images } from './mock';
-import 'prismjs';
-import 'prismjs/themes/prism-okaidia.css';
-import 'prismjs/components/prism-scss.min';
-import 'prismjs/plugins/autolinker/prism-autolinker.min';
-import 'prismjs/plugins/autolinker/prism-autolinker.css';
-import Prism from 'vue-prism-component';
+import ContainerBox from "./components/ContainerBox";
+import CloudImageProvider from "../../src/CloudimageProvider";
+import Img from "../../src/Img";
+import BackgroundImg from "../../src/Background";
+import { images } from "./mock";
+import "prismjs";
+import "prismjs/themes/prism-okaidia.css";
+import "prismjs/components/prism-scss.min";
+import "prismjs/plugins/autolinker/prism-autolinker.min";
+import "prismjs/plugins/autolinker/prism-autolinker.css";
+import Prism from "vue-prism-component";
 
 //cloud configuration
 const cloudImageConfig = {
-  token: 'demo',
-  baseURL: 'https://cloudimage.public.airstore.io/demo/',
-  params: 'ci_info=1&org_if_sml=1',
-  placeholderBackground: '#e1e1e1',
-  limitFactor: 10,
-  
-  };
+  token: "demo",
+  baseURL: "https://cloudimage.public.airstore.io/demo/",
+  params: "ci_info=1&org_if_sml=1",
+  placeholderBackground: "#e1e1e1",
+  limitFactor: 10
+};
 
 const imagesSliced = images.slice(1, 7);
 export default {
-  name: 'app',
+  name: "app",
   components: {
     ContainerBox,
     CloudImageProvider,
@@ -751,11 +724,11 @@ export default {
     Prism
   },
   // passing to config to provider
-  props: ['cloudimageConfig'],
+  props: ["cloudimageConfig"],
   mounted() {
     const self = this;
 
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       self.innerWidth = window.innerWidth;
     });
   },
@@ -763,7 +736,7 @@ export default {
   data() {
     return {
       syntaxHighlight1: `<Img
-  src="images[18].src"
+  :src="images[18].src"
   sizes="{
     '(max-width: 575px)': { w: 400, h: 150 },
     '(min-width: 576px)': { r: 1 },
@@ -793,10 +766,9 @@ export default {
       syntaxHighlight5: `<BackgroundImg
   src="ameen-fahmy.jpg" 
   params="func=crop" 
-  style="background: transparent 50% 50% / cover no-repeat">...</BackgroundImg>`,
+  :styles="{background: transparent 50% 50% / cover no-repeat">...</BackgroundImg>}`,
 
-
-      syntaxHighlight6:`import Vue from 'vue';
+      syntaxHighlight6: `import Vue from 'vue';
 import App from './App.vue';
 import VueLazyload from 'vue-lazyload';
 
@@ -815,7 +787,7 @@ const cloudimageConfig = {
 };
 
 <template>
-<CloudimageProvider config={cloudimageConfig}>
+<CloudimageProvider  v-bind:cloudImageConfig="cloudimageConfig">
  <h1>Simple demo of vue-cloudimage-responsive-plain</h1>
 <Img src="img.jpg" alt="Demo image"  />
 </CloudimageProvider>
