@@ -766,7 +766,7 @@ export default {
       syntaxHighlight5: `<BackgroundImg
   src="ameen-fahmy.jpg" 
   params="func=crop" 
-  :styles="{background: transparent 50% 50% / cover no-repeat">...</BackgroundImg>}`,
+  :styles="{background: transparent 50% 50% / cover no-repeat}">...</BackgroundImg>`,
 
       syntaxHighlight6: `import Vue from 'vue';
 import App from './App.vue';
