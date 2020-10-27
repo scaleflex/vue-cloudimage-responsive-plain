@@ -133,10 +133,12 @@ const cloudimageConfig = {
 };
 
 <template>
+ <div id="app">
 <CloudimageProvider  v-bind:cloudImageConfig="cloudimageConfig">
  <h1>Simple demo of vue-cloudimage-responsive</h1>
 <Img src="img.jpg" alt="Demo image" />
 </CloudimageProvider>
+</div>
 </template>
 
 <script>
