@@ -28,6 +28,9 @@ Types of changes:
 - ...
 
 ---
+## 1.0.3 - 2020-11-09
+### updated
+- utils version to add src to each size
 
 ## 1.0.2 - 2020-09-29
 
