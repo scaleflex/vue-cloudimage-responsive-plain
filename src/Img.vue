@@ -1,22 +1,29 @@
 <template>
-    <img v-if="server" :alt="alt" :src="BASE_64_PLACEHOLDER" />
-    <lazy-component v-else-if="!server && properties.config.lazyLoading && lazyLoadActive" @show="handler">
-      <img v-bind:class="loadedStyle" v-bind:alt="alt" @load="onImgLoad" v-bind="{ ...otherProps }" />
-    </lazy-component>
+  <img v-if="server" :alt="alt" :src="BASE_64_PLACEHOLDER" />
+  <lazy-component
+    v-else-if="!server && properties.config.lazyLoading && lazyLoadActive"
+    @show="handler"
+  >
     <img
-      v-else
       v-bind:class="loadedStyle"
-      v-bind:src="data.cloudimgURL"
-      :srcset="cloudimgSRCSET"
       v-bind:alt="alt"
-      @load="onImgLoad"
+      @load="_onImgLoad"
+      v-bind="{ ...otherProps }"
     />
+  </lazy-component>
+  <img
+    v-else
+    v-bind:class="loadedStyle"
+    v-bind:src="data.cloudimgURL"
+    :srcset="cloudimgSRCSET"
+    v-bind:alt="alt"
+    @load="_onImgLoad"
+  />
 </template>
 
 <script>
 import { isServer, processReactNode } from "cloudimage-responsive-utils";
 import { BASE_64_PLACEHOLDER } from "cloudimage-responsive-utils/dist/constants";
-
 
 export default {
   // geting the data from the provider
@@ -31,7 +38,8 @@ export default {
     lazyLoading: Boolean,
     lazyLoadConfig: Object,
     alt: String,
-    className: String
+    className: String,
+    onImgLoad: Function,
   },
   data() {
     return {
@@ -56,14 +64,15 @@ export default {
         lazyLoadConfig: this.lazyLoadConfig,
         alt: this.alt,
         className: this.className,
-        config: this.cloudProvider.config
+        config: this.cloudProvider.config,
+        onImgLoad: this.onImgLoad,
       },
       preserveSize: "",
       imgNodeWidth: "",
       imgNodeHeight: "",
       otherProps: "",
       cloudimgSRCSET: "",
-      loadedStyle: ""
+      loadedStyle: "",
     };
   },
   mounted() {
@@ -75,9 +84,6 @@ export default {
       .trim();
 
     this.processImg();
-
-  
-
   },
   updated() {
     //srcset value after processing image
@@ -122,17 +128,22 @@ export default {
       this.loadedImageRatio = image.naturalWidth / image.naturalHeight;
     },
 
-    onImgLoad(event) {
+    _onImgLoad(event) {
       this.updateLoadedImageSize(event.target);
       this.loaded = true;
-    }
+
+      const { onImgLoad } = this.properties;
+      if (typeof onImgLoad === "function") {
+        onImgLoad(event);
+      }
+    },
   },
   watch: {
-    "properties.config.innerWidth": function(newVal, oldVal) {
+    "properties.config.innerWidth": function (newVal, oldVal) {
       if (this.server) return;
 
       const {
-        config: { innerWidth }
+        config: { innerWidth },
       } = this.properties;
 
       if (oldVal !== innerWidth) {
@@ -141,15 +152,15 @@ export default {
         this.processImg(true, innerWidth > oldVal);
       }
     },
-    "properties.src": function(newVal, oldVal) {
+    "properties.src": function (newVal, oldVal) {
       const { src } = this.properties;
       if (src !== oldVal.src) {
         this.processImg();
       }
     },
-    loaded: function(newVal) {
+    loaded: function (newVal) {
       const loaded = newVal;
-   
+
       if (loaded === true) {
         //if  loaded change to loaded
         this.loadedStyle = [this.className, "cloudimage-background", "loaded"]
@@ -161,7 +172,7 @@ export default {
           .join(" ")
           .trim();
       }
-    }
-  }
+    },
+  },
 };
 </script>

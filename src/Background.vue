@@ -1,17 +1,18 @@
 <template>
-    <div v-if="processed">
+  <div v-if="processed">
+    <slot></slot>
+  </div>
+  <lazy-component
+    v-else-if="properties.config.lazyLoading && lazyLoadActive"
+    @show="handler"
+  >
+    <div :class="loadedStyle" :style="combinedStyle">
       <slot></slot>
     </div>
-    <lazy-component v-else-if="properties.config.lazyLoading && lazyLoadActive" @show="handler">
-      <div :class="loadedStyle" :style="combinedStyle">
-        <slot></slot>
-      </div>
-    </lazy-component>
-    <div v-else :class="loadedStyle" :style="combinedStyle">
-      <slot></slot>
-    </div>
-   
-  
+  </lazy-component>
+  <div v-else :class="loadedStyle" :style="combinedStyle">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -31,7 +32,8 @@ export default {
     lazyLoading: Boolean,
     lazyLoadConfig: Object,
     alt: String,
-    className: String
+    className: String,
+    onImgLoad: Function,
   },
   data() {
     return {
@@ -54,10 +56,11 @@ export default {
         lazyLoadConfig: this.lazyLoadConfig,
         alt: this.alt,
         className: this.className,
+        onImgLoad: this.onImgLoad,
       },
       combinedStyle: "",
       container: "",
-      loadedStyle: ""
+      loadedStyle: "",
     };
   },
   mounted() {
@@ -68,7 +71,7 @@ export default {
     //initial value combinedstyle
     this.combinedStyle = {
       ...this.properties.style,
-      backgroundImage: `url(${this.data.cloudimgURL})`
+      backgroundImage: `url(${this.data.cloudimgURL})`,
     };
 
     this.processBg();
@@ -80,7 +83,7 @@ export default {
       //initial value combinedstyle
       this.combinedStyle = {
         ...this.properties.style,
-        backgroundImage: `url(${this.data.cloudimgURL})`
+        backgroundImage: `url(${this.data.cloudimgURL})`,
       };
     },
     processBg(update, windowScreenBecomesBigger) {
@@ -103,12 +106,16 @@ export default {
       img.src = cloudimgURL;
     },
 
-    onImgLoad() {
+    _onImgLoad(event) {
       this.loaded = true;
-    }
+      const { onImgLoad } = this.properties;
+      if (typeof onImgLoad === "function") {
+        onImgLoad(event);
+      }
+    },
   },
   watch: {
-    "properties.config.innerWidth": function(newVal, oldVal) {
+    "properties.config.innerWidth": function (newVal, oldVal) {
       const style = this.properties.style;
       const cloudimgURL = this.data.cloudimgURL;
       const previewCloudimgURL = this.data.previewCloudimgURL;
@@ -117,7 +124,7 @@ export default {
       if (this.server) return;
 
       const {
-        config: { innerWidth }
+        config: { innerWidth },
       } = this.properties;
 
       if (oldVal !== innerWidth) {
@@ -128,16 +135,16 @@ export default {
       //update value combinedstyle when width changed
       this.combinedStyle = {
         ...this.properties.style,
-        backgroundImage: `url(${this.data.cloudimgURL})`
+        backgroundImage: `url(${this.data.cloudimgURL})`,
       };
     },
-    "properties.src": function(newVal, oldVal) {
+    "properties.src": function (newVal, oldVal) {
       const { src } = this.properties;
       if (src !== oldVal.src) {
         this.processBg();
       }
     },
-    loaded: function(newVal) {
+    loaded: function (newVal) {
       const loaded = newVal;
 
       if (loaded) {
@@ -145,7 +152,7 @@ export default {
         //updating value of combined style if page loaded
         this.combinedStyle = {
           ...this.properties.style,
-          backgroundImage: `url(${this.data.cloudimgURL})`
+          backgroundImage: `url(${this.data.cloudimgURL})`,
         };
         //if loaded change style to loaded
         this.loadedStyle = [this.className, "cloudimage-background", "loaded"]
@@ -157,10 +164,10 @@ export default {
       }
     },
 
-    lazyLoadActive: function() {
+    lazyLoadActive: function () {
       if (!this.lazyLoadActive) {
         const {
-          config: { delay }
+          config: { delay },
         } = this.cloudProvider;
 
         if (typeof delay !== "undefined") {
@@ -171,7 +178,7 @@ export default {
           this.preLoadImg(this.data.cloudimgURL);
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
