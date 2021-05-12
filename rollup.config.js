@@ -4,7 +4,7 @@ const vue = require('rollup-plugin-vue')
 const pkg = require('./package.json')
 
 const banner = `/*
- * vue-cloudimage-responsive v${pkg.version}
+ * vue-cloudimage-responsive-plain v${pkg.version}
  *
  * @license
  * Copyright 2020, Scaleflex

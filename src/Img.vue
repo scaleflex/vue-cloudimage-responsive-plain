@@ -4,12 +4,14 @@
     v-else-if="!server && properties.config.lazyLoading && lazyLoadActive"
     @show="handler"
   >
-    <img
-      v-bind:class="loadedStyle"
-      v-bind:alt="alt"
-      @load="_onImgLoad"
-      v-bind="{ ...otherProps }"
-    />
+  <img
+    v-bind:class="loadedStyle"
+    v-bind:alt="alt"
+    @load="_onImgLoad"
+    v-bind="{ ...otherProps }"
+    :width="getWidth(width)"
+    :height="getHeight(height)"
+  />
   </lazy-component>
   <img
     v-else
@@ -17,12 +19,14 @@
     v-bind:src="data.cloudimgURL"
     :srcset="cloudimgSRCSET"
     v-bind:alt="alt"
+    :width="getWidth(width)"
+    :height="getHeight(height)"
     @load="_onImgLoad"
   />
 </template>
 
 <script>
-import { isServer, processReactNode } from "cloudimage-responsive-utils";
+import { isServer, processReactNode} from "cloudimage-responsive-utils";
 import { BASE_64_PLACEHOLDER } from "cloudimage-responsive-utils/dist/constants";
 
 export default {
@@ -137,6 +141,14 @@ export default {
         onImgLoad(event);
       }
     },
+
+    getWidth(width){
+      return width ? parseInt(width, 10) : null;
+    },
+     
+    getHeight(height){
+      return height ? parseInt(height, 10) : null;
+    }
   },
   watch: {
     "properties.config.innerWidth": function (newVal, oldVal) {
