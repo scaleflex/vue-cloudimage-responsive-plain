@@ -28,6 +28,15 @@ Types of changes:
 - ...
 
 ---
+## 1.0.6 - 2020-05-13
+### Added
+- ignoreNodeImgSize props
+- documentation to readme.md under config
+### fixed
+- showing width and height attributes on img tag
+### Added
+- OnImgLoad to capture event on load
+-  documentation to readme.md under image properties
 ## 1.0.5 - 2020-02-06
 ### Added
 - OnImgLoad to capture event on load
