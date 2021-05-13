@@ -95,7 +95,7 @@
       </section>
       <section class="container-box-wrapper" style="margin: 0">
         <ContainerBox v-bind:config="cloudImageConfig" />
-        <Img :onImgLoad="onImgLoad" v-bind:src="images[0].src" />
+        <Img  v-bind:src="images[0].src" />
       </section>
       <div style="background: #fff">
         <section class="container ready-to-start">
@@ -845,10 +845,6 @@ const cloudimageConfig = {
       devicePixelRatio: (window.devicePixelRatio || 1).toFixed(1),
     };
   },
-  methods: {
-    onImgLoad(params) {
-      console.log(params);
-    },
-  },
+  
 };
 </script>
