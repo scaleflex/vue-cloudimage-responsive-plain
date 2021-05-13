@@ -35,7 +35,7 @@ export default {
         doNotReplaceURL: this.cloudImageConfig.doNotReplaceURL || false,
         devicePixelRatioList: this.cloudImageConfig.devicePixelRatioList || CONSTANTS.DEVICE_PIXEL_RATIO_LIST,
         limitFactor: this.cloudImageConfig.limitFactor || 100,
-        ignoreNodeImgSize:this.cloudImageConfig.ignoreNodeImgSize,
+        ignoreNodeImgSize: this.cloudImageConfig.ignoreNodeImgSize,
         xs: '(max-width: 575px)',
         sm: '(min-width: 576px)',
         md: '(min-width: 768px)',

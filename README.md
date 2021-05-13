@@ -313,6 +313,13 @@ Delay for processing an image after rendering component.
 **NOTE:** normally the parameter is not needed, but in some cases with integrating third part libraries it can fix wrong
 calculation of image container.
 
+### ignoreNodeImgSize
+
+###### Type: **boolean** | Default: **false** | _optional_
+
+If set to true, the plugin ignores width and height attributes.
+
+
 ## <a name="image_properties"></a> Image properties
 
 ### src
