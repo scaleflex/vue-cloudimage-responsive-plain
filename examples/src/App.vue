@@ -816,8 +816,15 @@ import Img, { CloudimageProvider } from 'vue-cloudimage-responsive-plain';
 
 const cloudimageConfig = {
   token: 'demo',
-  baseURL: 'https://jolipage.airstore.io/'
+  baseURL: 'https://jolipage.airstore.io/',
 };
+
+const cloudimageConfigWithCustomCNAMEDomain = {
+  token: 'demo',
+  baseURL: 'https://jolipage.airstore.io/',
+  customDomain: 'images.airstore.io'
+};
+
 
 <template>
 <CloudimageProvider  v-bind:cloudImageConfig="cloudimageConfig">
