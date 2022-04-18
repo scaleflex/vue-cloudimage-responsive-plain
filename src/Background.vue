@@ -34,6 +34,7 @@ export default {
     alt: String,
     className: String,
     onImgLoad: Function,
+    doNotReplaceURL: Boolean,
   },
   data() {
     return {
@@ -57,6 +58,7 @@ export default {
         alt: this.alt,
         className: this.className,
         onImgLoad: this.onImgLoad,
+        doNotReplaceURL: this.doNotReplaceURL
       },
       combinedStyle: "",
       container: "",

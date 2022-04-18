@@ -44,6 +44,7 @@ export default {
     alt: String,
     className: String,
     onImgLoad: Function,
+    doNotReplaceURL: Boolean,
   },
   data() {
     return {
@@ -70,6 +71,7 @@ export default {
         className: this.className,
         config: this.cloudProvider.config,
         onImgLoad: this.onImgLoad,
+        doNotReplaceURL: this.doNotReplaceURL
       },
       preserveSize: "",
       imgNodeWidth: "",

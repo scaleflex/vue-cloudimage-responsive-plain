@@ -95,7 +95,7 @@
       </section>
       <section class="container-box-wrapper" style="margin: 0">
         <ContainerBox v-bind:config="cloudImageConfig" />
-        <Img  v-bind:src="images[0].src" />
+        <Img  v-bind:src="images[0].src" doNotReplaceURL/>
       </section>
       <div style="background: #fff">
         <section class="container ready-to-start">
