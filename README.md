@@ -1,11 +1,9 @@
-[![Release](https://img.shields.io/badge/release-v1.3.4-blue.svg)](https://github.com/scaleflex/vue-cloudimage-responsive/releases)
+[![Release](https://img.shields.io/badge/release-v1.3.5-blue.svg)](https://github.com/scaleflex/js-cloudimage-responsive/releases)
 [![Free plan](https://img.shields.io/badge/price-includes%20free%20plan-green.svg)](https://www.cloudimage.io/en/home#b38181a6-b9c8-4015-9742-7b1a1ad382d5)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](#contributing)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Scaleflex team](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-the%20Scaleflex%20team-6986fa.svg)](https://www.scaleflex.it/en/home)
-
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Responsive%20images,%20now%20easier%20than%20ever&url=https://scaleflex.github.io/vue-cloudimage-responsive-plain/&via=cloudimage&hashtags=vue,images,cloudimage,responsive_images,lazy_loading,web_acceleration,image_optimization,image_CDN,image_CDNwebp,jpeg_xr,jpg_optimization,image_resizing_and_CDN,cropresize)
-
+[![Scaleflex team](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-the%20Scaleflex%20team-6986fa.svg)](https://www.scaleflex.com/en/home)
+[![Cloudimage](https://img.shields.io/badge/Powered%20by-cloudimage-blue)](https://www.cloudimage.io/en/home)
 ## VERSIONS
 
 - [**Low Quality Preview**](https://github.com/scaleflex/vue-cloudimage-responsive)
@@ -39,7 +37,7 @@
 		•
 		<a href="https://scaleflex.github.io/vue-cloudimage-responsive-plain/" target="_blank">Demo</a>
 		•
-		<a href="https://codesandbox.io/s/vue-cloudimage-resposnove-plain-example-2z2l7?file=/src/App.vue" target="_blank">Code Sandbox</a>
+		<a href="https://codesandbox.io/s/vue-cloudimage-responsive-example-b64iq4" target="_blank">Code Sandbox</a>
 		•
 		<a href="https://medium.com/@dmitry_82269/responsive-images-in-2019-now-easier-than-ever-b76e5a43c074" target="_blank">Why?</a>
 	</strong>
@@ -64,15 +62,13 @@ Cloudimage, contact us at
 <p align="center">
 	<img
 		alt="The Lounge"
-		src="https://demo.cloudimg.io/width/1400/n/https://scaleflex.airstore.io/filerobot/cloudimage-process.jpg?sanitize=true">
+		src="https://cdn.scaleflex.it/filerobot/cloudimage-process.jpg">
 </p>
-
-powered by [Cloudimage](https://www.cloudimage.io/)
-([Watch the video here](https://www.youtube.com/watch?time_continue=2&v=JFZSE1vYb0k))
 
 ## Table of contents
 
 - [Demo](#demo)
+- [Responsive plugins family](#plugin_family)
 - [Requirements](#requirements)
 - [Step 1: Installation](#installation)
 - [Step 2: Initialize](#initialize)
@@ -93,6 +89,28 @@ Play with your browser's window size and observe your
 Inspector's Network tab to see how Cloudimage delivers the optimal
 image size to your browser, hence accelerating the overall page
 loading time.
+
+## <a name="plugin_family"></a> Responsive plugins family
+In order to use Cloudimage responsive plugins on your single-page application, please check out Cloudimage responsive plugins for vanilla Javascript and the most popular Javascript frameworks.
+
+<details>
+<summary>Javascript</summary>
+<a href="https://github.com/scaleflex/js-cloudimage-responsive">Js Cloudimage Responsive (Low Quality Preview)</a><br/>
+<a href="https://github.com/scaleflex/js-cloudimage-responsive/blob/master/README-BLUR-HASH.md">Js Cloudimage Responsive (Blur-hash)</a><br/>
+<a href="https://github.com/scaleflex/js-cloudimage-responsive/blob/master/README-PLAIN.md">Js Cloudimage Responsive (Plain)</a>
+</details>
+
+<details>
+<summary>React</summary>
+<a href="https://github.com/scaleflex/react-cloudimage-responsive">React Cloudimage Responsive (Low Quality Preview)</a><br/>
+<a href="https://github.com/scaleflex/react-cloudimage-responsive-blur-hash">React Cloudimage Responsive (Blur-hash)</a><br/>
+<a href="https://github.com/scaleflex/react-cloudimage-responsive-plain">React Cloudimage Responsive (Plain)</a>
+</details>
+
+<details>
+<summary>Angular</summary>
+<a href="https://github.com/scaleflex/ng-cloudimage-responsive">Angular Cloudimage Responsive (Low Quality Preview)</a><br/>
+</details>
 
 ## <a name="requirements"/> Requirements
 
@@ -135,7 +153,7 @@ import Img, { CloudimageProvider } from 'vue-cloudimage-responsive-plain';
 
 const cloudimageConfig = {
   token: 'demo',
-  baseURL: 'https://jolipage.airstore.io/'
+  baseURL: 'https://cdn.scaleflex.it/'
 };
 
 <template>
@@ -169,7 +187,7 @@ NOTE: "ratio" is recommended to prevent page layout jumping. The parameter is us
 the image position while image is loading.
 - you can also reference it with kabab-case : img
 
-<a href="https://codesandbox.io/s/vue-cloudimage-resposnove-plain-example-2z2l7?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
+<a href="https://codesandbox.io/s/vue-cloudimage-responsive-example-b64iq4"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
 ### BackgroundImg component:
 
@@ -180,7 +198,7 @@ the image position while image is loading.
 ```
 NOTE: you can also reference it with kabab-case : background-img
 
-<a href="https://codesandbox.io/s/vue-cloudimage-responsive-background-plain-ntdrm?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
+<a href="https://codesandbox.io/s/vue-cloudimage-responsive-example-7dyqso"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
 ## <a name="configuration"></a> Config
 
@@ -216,7 +234,7 @@ Allow to use a specific version of API.
 ```javascript
 const cloudimageConfig = {
   token: 'demo',
-  baseURL: 'https://jolipage.airstore.io/',
+  baseURL: 'https://cdn.scaleflex.it/',
   apiVersion: 'v7'                            // optional
 };
 ```
@@ -224,7 +242,7 @@ const cloudimageConfig = {
 ```javascript
 const cloudimageConfig = {
   token: 'demo',
-  baseURL: 'https://jolipage.airstore.io/',
+  baseURL: 'https://cdn.scaleflex.it/',
   apiVersion: null                            // optional
 };
 ```
@@ -282,7 +300,7 @@ Placeholder colored background while the image is loading or use it to set your 
 
 for example
 
-`placeholderBackground: "url('https://scaleflex.airstore.io/filerobot/red-loader.gif') 50% 50% no-repeat"`
+`placeholderBackground: "url('https://cdn.scaleflex.it/filerobot/red-loader.gif') 50% 50% no-repeat"`
 
 ### lowQualityPreview
 
@@ -308,7 +326,7 @@ Default:
 ```javascript
 const cloudimageConfig = {
   token: 'demo',
-  baseUrl: 'https://jolipage.airstore.io/',
+  baseUrl: 'https://cdn.scaleflex.it/',
   ...
   presets: {
       xs: '(max-width: 575px)', // up to 575    PHONE

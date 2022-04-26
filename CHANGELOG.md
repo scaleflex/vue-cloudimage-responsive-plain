@@ -28,6 +28,10 @@ Types of changes:
 - ...
 
 ---
+## 1.3.5 - 2022-04-25
+### Fixed
+- Low preview image width
+
 ## 1.3.3 - 2022-04-18
 ### Fixed
 - possibility to add `doNotReplaceURL` to single image
