@@ -5,10 +5,10 @@
     @show="handler"
   >
   <img
+    v-bind="{ ...otherProps }"
     v-bind:class="loadedStyle"
     v-bind:alt="alt"
     @load="_onImgLoad"
-    v-bind="{ ...otherProps }"
     :width="getWidth(width)"
     :height="getHeight(height)"
   />

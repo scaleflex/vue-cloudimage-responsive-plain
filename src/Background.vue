@@ -104,7 +104,11 @@ export default {
     preLoadImg(cloudimgURL) {
       const img = new Image();
 
-      img.onload = this.onImgLoad;
+      const { onImgLoad } = this.properties;
+
+      img.onload = function() {
+        onImgLoad();
+      };
       img.src = cloudimgURL;
     },
 
