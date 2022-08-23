@@ -1,32 +1,15 @@
 <template>
   <img v-if="server" :alt="alt" :src="BASE_64_PLACEHOLDER" />
-  <lazy-component
-    v-else-if="!server && properties.config.lazyLoading && lazyLoadActive"
-    @show="handler"
-  >
-  <img
-    v-bind="{ ...otherProps }"
-    v-bind:class="loadedStyle"
-    v-bind:alt="alt"
-    @load="_onImgLoad"
-    :width="getWidth(width)"
-    :height="getHeight(height)"
-  />
+  <lazy-component v-else-if="!server && properties.config.lazyLoading && lazyLoadActive" @show="handler">
+    <img v-bind="{ ...otherProps }" v-bind:class="loadedStyle" v-bind:alt="alt" @load="_onImgLoad"
+      :width="getWidth(width)" :height="getHeight(height)" />
   </lazy-component>
-  <img
-    v-else
-    v-bind:class="loadedStyle"
-    v-bind:src="data.cloudimgURL"
-    :srcset="cloudimgSRCSET"
-    v-bind:alt="alt"
-    :width="getWidth(width)"
-    :height="getHeight(height)"
-    @load="_onImgLoad"
-  />
+  <img v-else v-bind:class="loadedStyle" v-bind:src="data.cloudimgURL" :srcset="cloudimgSRCSET" v-bind:alt="alt"
+    :width="getWidth(width)" :height="getHeight(height)" @load="_onImgLoad" />
 </template>
 
 <script>
-import { isServer, processReactNode} from "cloudimage-responsive-utils";
+import { isServer, processReactNode, generateAlt } from "cloudimage-responsive-utils";
 import { BASE_64_PLACEHOLDER } from "cloudimage-responsive-utils/dist/constants";
 
 export default {
@@ -67,7 +50,7 @@ export default {
         ratio: this.ratio,
         lazyLoading: this.lazyLoading,
         lazyLoadConfig: this.lazyLoadConfig,
-        alt: this.alt,
+        alt: this.alt || generateAlt(this.src),
         className: this.className,
         config: this.cloudProvider.config,
         onImgLoad: this.onImgLoad,
@@ -84,12 +67,21 @@ export default {
   mounted() {
     if (this.server) return;
 
+    const {
+      config: { delay },
+    } = this.properties;
+
     //initial loading style
-    this.loadedStyle = [this.className, "cloudimage-background", "loading"]
-      .join(" ")
+    this.loadedStyle = `${this.className} cloudimage-background loading`
       .trim();
 
-    this.processImg();
+    if (typeof delay !== 'undefined') {
+      setTimeout(() => {
+        this.processImg();
+      }, delay);
+    } else {
+      this.processImg();
+    }
   },
   updated() {
     //srcset value after processing image
@@ -144,11 +136,11 @@ export default {
       }
     },
 
-    getWidth(width){
+    getWidth(width) {
       return width ? parseInt(width, 10) : null;
     },
-     
-    getHeight(height){
+
+    getHeight(height) {
       return height ? parseInt(height, 10) : null;
     }
   },
@@ -175,17 +167,8 @@ export default {
     loaded: function (newVal) {
       const loaded = newVal;
 
-      if (loaded === true) {
-        //if  loaded change to loaded
-        this.loadedStyle = [this.className, "cloudimage-background", "loaded"]
-          .join(" ")
-          .trim();
-      } else {
-        //if still loading change to loading
-        this.loadedStyle = [this.className, "cloudimage-background", "loading"]
-          .join(" ")
-          .trim();
-      }
+      this.loadedStyle = `${this.className} cloudimage-background ${loaded ? 'loaded' : 'loading'}`
+        .trim();
     },
   },
 };

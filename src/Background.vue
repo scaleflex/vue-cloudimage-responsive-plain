@@ -2,10 +2,7 @@
   <div v-if="processed">
     <slot></slot>
   </div>
-  <lazy-component
-    v-else-if="properties.config.lazyLoading && lazyLoadActive"
-    @show="handler"
-  >
+  <lazy-component v-else-if="properties.config.lazyLoading && lazyLoadActive" @show="handler">
     <div :class="loadedStyle" :style="combinedStyle">
       <slot></slot>
     </div>
@@ -16,7 +13,7 @@
 </template>
 
 <script>
-import { isServer, processReactNode } from "cloudimage-responsive-utils";
+import { isServer, processReactNode, generateAlt } from "cloudimage-responsive-utils";
 
 export default {
   // geting the data from the provider
@@ -55,7 +52,7 @@ export default {
         ratio: this.ratio,
         lazyLoading: this.lazyLoading,
         lazyLoadConfig: this.lazyLoadConfig,
-        alt: this.alt,
+        alt: this.alt || generateAlt(this.src),
         className: this.className,
         onImgLoad: this.onImgLoad,
         doNotReplaceURL: this.doNotReplaceURL
@@ -69,7 +66,8 @@ export default {
     if (this.server) return;
 
     //initial loading style
-    this.loadedStyle = [this.className, "cloudimage-background", "loading"];
+    this.loadedStyle = this.loadedStyle = `${this.className} cloudimage-background loading`
+      .trim();
     //initial value combinedstyle
     this.combinedStyle = {
       ...this.properties.style,
@@ -106,7 +104,7 @@ export default {
 
       const { onImgLoad } = this.properties;
 
-      img.onload = function() {
+      img.onload = function () {
         onImgLoad();
       };
       img.src = cloudimgURL;
@@ -160,14 +158,10 @@ export default {
           ...this.properties.style,
           backgroundImage: `url(${this.data.cloudimgURL})`,
         };
-        //if loaded change style to loaded
-        this.loadedStyle = [this.className, "cloudimage-background", "loaded"]
-          .join(" ")
-          .trim();
-      } else {
-        //if still loading change to loading
-        this.loadedStyle = [this.className, "cloudimage-background", "loading"];
       }
+      //if loaded change style to loaded
+      this.loadedStyle = `${this.className} cloudimage-background ${loaded ? 'loaded' : 'loading'}`
+        .trim();
     },
 
     lazyLoadActive: function () {
