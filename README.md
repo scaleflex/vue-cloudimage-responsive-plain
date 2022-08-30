@@ -1,4 +1,4 @@
-[![Release](https://img.shields.io/badge/release-v1.3.5-blue.svg)](https://github.com/scaleflex/js-cloudimage-responsive/releases)
+[![Release](https://img.shields.io/github/v/release/scaleflex/vue-cloudimage-responsive-plain)](https://github.com/scaleflex/vue-cloudimage-responsive-plain/releases)
 [![Free plan](https://img.shields.io/badge/price-includes%20free%20plan-green.svg)](https://www.cloudimage.io/en/home#b38181a6-b9c8-4015-9742-7b1a1ad382d5)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](#contributing)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -69,6 +69,7 @@ Cloudimage, contact us at
 
 - [Demo](#demo)
 - [Responsive plugins family](#plugin_family)
+- [Compatibility](#compatibility)
 - [Requirements](#requirements)
 - [Step 1: Installation](#installation)
 - [Step 2: Initialize](#initialize)
@@ -108,9 +109,27 @@ In order to use Cloudimage responsive plugins on your single-page application, p
 </details>
 
 <details>
+<summary>Next.js</summary>
+<a href="https://github.com/scaleflex/next-cloudimage-responsive">Vue Cloudimage Responsive (Low Quality Preview)</a><br/>
+</details>
+
+<details>
+<summary>Vue.js</summary>
+<a href="https://github.com/scaleflex/vue-cloudimage-responsive">Vue Cloudimage Responsive (Low Quality Preview)</a><br/>
+<a href="https://github.com/scaleflex/vue-cloudimage-responsive-blur-hash">Vue Cloudimage Responsive (Blur-hash)</a><br/>
+<a href="https://github.com/scaleflex/vue-cloudimage-responsive-plain">Vue Cloudimage Responsive (Plain)</a>
+</details>
+
+<details>
 <summary>Angular</summary>
 <a href="https://github.com/scaleflex/ng-cloudimage-responsive">Angular Cloudimage Responsive (Low Quality Preview)</a><br/>
 </details>
+
+## <a name="compatibility"></a> Compatibility
+| Version | Vue Version |
+|---------|--------------|
+| >2.0.0   | >=3.x.x |
+| <=2.0.0   | <=2.x.x |
 
 ## <a name="requirements"/> Requirements
 
@@ -126,30 +145,36 @@ CDN traffic per month for free.
 using npm
 
 ```
-$ npm install --save vue-cloudimage-responsive-plain
+ npm install vue-cloudimage-responsive-plain vue-lazyload
+```
+or using yarn
+
+```
+ yarn add vue-cloudimage-responsive-plain vue-lazyload
 ```
 
 ## <a name="initialize"></a>Step 2: Initialize
 
-After installing the vue-cloudimage-responsive lib, simply initialize it with your **token** and the **baseURL**
-of your image storage with **CloudimageProvider**:
-create vue instance a fle called main.js
+After installing the vue-cloudimage-responsive-plain lib, simply initialize it with your **token** and the **baseURL**
+of your image storage with **CloudImageProvider**:
+create vue instance a file called main.js
 
 ```js
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import VueLazyload from 'vue-lazyload'
+import VueLazyload from 'vue-lazyload';
 
-Vue.use(VueLazyload, {
+const app = createApp(App);
+
+app.use(VueLazyload, {
   lazyComponent: true
-})
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+});
+
+app.mount('#app');
 ```
 
 ```jsx
-import Img, { CloudimageProvider } from 'vue-cloudimage-responsive-plain';
+import Img, { CloudImageProvider } from 'vue-cloudimage-responsive-plain';
 
 const cloudimageConfig = {
   token: 'demo',
@@ -158,20 +183,26 @@ const cloudimageConfig = {
 
 <template>
  <div id="app">
-<CloudimageProvider  v-bind:cloudImageConfig="cloudimageConfig">
- <h1>Simple demo of vue-cloudimage-responsive</h1>
+<CloudImageProvider  v-bind:cloudImageConfig="cloudimageConfig">
+ <h1>Simple demo of vue-cloudimage-responsive-plain</h1>
 <Img src="img.jpg" alt="Demo image" />
-</CloudimageProvider>
+</CloudImageProvider>
 </div>
 </template>
 
 <script>
 export default{
-    components:{
-    CloudimageProvider,
-    Img
-    }
-}
+  name: "app",
+  components: {
+    CloudImageProvider,
+    Img,
+  },
+  data() { 
+    return { 
+      cloudimageConfig
+    };
+  },
+},
 </script>
 ```
 
@@ -192,7 +223,7 @@ the image position while image is loading.
 ### BackgroundImg component:
 
 ```html
-<BackgroundImg src="img.jpg"
+<BackgroundImg src="img.jpg">
   {'Your conent...'}
 </BackgroundImg>
 ```

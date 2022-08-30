@@ -3,42 +3,20 @@
     <CloudImageProvider v-bind:cloudImageConfig="cloudImageConfig">
       <section class="home">
         <div class="container">
-          <a
-            class="logo"
-            href="https://scaleflex.github.io/vue-cloudimage-responsive-plain/"
-            >Vue Cloudimage Responsive</a
-          >
+          <a class="logo" href="https://scaleflex.github.io/vue-cloudimage-responsive-plain/">Vue Cloudimage
+            Responsive</a>
           <p>(Plain version)</p>
           <div class="reference-buttons">
-            <a
-              class="github-button"
-              target="_blank"
-              href="https://github.com/Scaleflex/vue-cloudimage-responsive-plain/subscription"
-              data-icon="octicon-eye"
-              aria-label="Watch Scaleflex/vue-cloudimage-responsive-plain on GitHub"
-              >Watch</a
-            >
-            <a
-              class="github-button"
-              target="_blank"
-              href="https://github.com/Scaleflex/vue-cloudimage-responsive-plain"
-              data-icon="octicon-star"
-              aria-label="Star Scaleflex/vue-cloudimage-responsive-plain on GitHub"
-              >Star</a
-            >
-            <a
-              class="github-button"
-              target="_blank"
-              href="https://github.com/Scaleflex/vue-cloudimage-responsiv-plaine/fork"
-              data-icon="octicon-repo-forked"
-              aria-label="Fork Scaleflex/vue-cloudimage-responsive-plain on GitHub"
-              >Fork</a
-            >
-            <a
-              class="twitter-share-button btn btn-info"
-              target="_blank"
-              href="https://twitter.com/intent/tweet?text=Responsive%20images,%20now%20easier%20than%20ever&url=https://scaleflex.github.io/vue-cloudimage-responsive/&via=cloudimage&hashtags=images,cloudimage,responsive_images,lazy_loading,web_acceleration,image_optimization,image_CDN,image_CDNwebp,jpeg_xr,jpg_optimization,image_resizing_and_CDN,cropresize"
-            >
+            <a class="github-button" target="_blank"
+              href="https://github.com/Scaleflex/vue-cloudimage-responsive-plain/subscription" data-icon="octicon-eye"
+              aria-label="Watch Scaleflex/vue-cloudimage-responsive-plain on GitHub">Watch</a>
+            <a class="github-button" target="_blank" href="https://github.com/Scaleflex/vue-cloudimage-responsive-plain"
+              data-icon="octicon-star" aria-label="Star Scaleflex/vue-cloudimage-responsive-plain on GitHub">Star</a>
+            <a class="github-button" target="_blank"
+              href="https://github.com/Scaleflex/vue-cloudimage-responsiv-plaine/fork" data-icon="octicon-repo-forked"
+              aria-label="Fork Scaleflex/vue-cloudimage-responsive-plain on GitHub">Fork</a>
+            <a class="twitter-share-button btn btn-info" target="_blank"
+              href="https://twitter.com/intent/tweet?text=Responsive%20images,%20now%20easier%20than%20ever&url=https://scaleflex.github.io/vue-cloudimage-responsive/&via=cloudimage&hashtags=images,cloudimage,responsive_images,lazy_loading,web_acceleration,image_optimization,image_CDN,image_CDNwebp,jpeg_xr,jpg_optimization,image_resizing_and_CDN,cropresize">
               <i></i>
               <span>Tweet</span>
             </a>
@@ -57,45 +35,26 @@
             on image load.
           </h2>
           <div class="actions-wrapper">
-            <a
-              id="view-github-btn"
-              href="https://github.com/scaleflex/vue-cloudimage-responsive-plain"
-              class="btn btn-primary"
-              target="_blank"
-              >View on GitHub</a
-            >
-            <a
-              href="https://codesandbox.io/s/vue-cloudimage-resposnove-plain-example-2z2l7?file=/src/App.vue"
-              style="margin-left: 5px"
-              class="btn btn-light"
-              target="_blank"
-              >Edit on CodeSandbox</a
-            >
+            <a id="view-github-btn" href="https://github.com/scaleflex/vue-cloudimage-responsive-plain"
+              class="btn btn-primary" target="_blank">View on GitHub</a>
+            <a href="https://codesandbox.io/s/vue-cloudimage-resposnove-plain-example-2z2l7?file=/src/App.vue"
+              style="margin-left: 5px" class="btn btn-light" target="_blank">Edit on CodeSandbox</a>
           </div>
         </div>
-        <a
-          href="https://github.com/scaleflex/vue-cloudimage-responsive-plain"
-          target="_blank"
-        >
-          <img
-            class="fork-me-on-github"
-            src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
-            alt="Fork me on GitHub"
-          />
+        <a href="https://github.com/scaleflex/vue-cloudimage-responsive-plain" target="_blank">
+          <img class="fork-me-on-github" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
+            alt="Fork me on GitHub" />
         </a>
 
         <a href="https://www.filerobot.com/" class="robot-icon">
-          <img
-            style="width: 100%"
-            id="robot-icon"
+          <img style="width: 100%" id="robot-icon"
             src="https://demo.cloudimg.io/width/800/q35.foil1/https://cdn.scaleflex.it/filerobot/assets/robot-icon-left.png"
-            alt
-          />
+            alt />
         </a>
       </section>
       <section class="container-box-wrapper" style="margin: 0">
         <ContainerBox v-bind:config="cloudImageConfig" />
-        <Img  v-bind:src="images[0].src" doNotReplaceURL/>
+        <Img v-bind:src="images[0].src" doNotReplaceURL />
       </section>
       <div style="background: #fff">
         <section class="container ready-to-start">
@@ -153,9 +112,7 @@
         <p style="margintop: 20px">
           Read the following{{ " " }}
           <a
-            href="https://medium.com/cloudimage/cloudimage-resizes-your-images-saves-time-accelerates-your-website-and-increases-your-conversion-eb128903d4c2"
-            >article</a
-          >
+            href="https://medium.com/cloudimage/cloudimage-resizes-your-images-saves-time-accelerates-your-website-and-increases-your-conversion-eb128903d4c2">article</a>
           {{ " " }} to learn more about Cloudimage.io service.
         </p>
       </section>
@@ -171,11 +128,7 @@
             :{{ " " }}
             <code>https://cdn.scaleflex.it/demo/redcharlie.jpg</code>
             {{ " " }}
-            <a
-              target="_blank"
-              href="https://cdn.scaleflex.it/demo/redcharlie.jpg"
-              >link</a
-            >
+            <a target="_blank" href="https://cdn.scaleflex.it/demo/redcharlie.jpg">link</a>
             {{ " " }}
             In the table below we can see what size and resolution will be
             loaded depending on the image's container.
@@ -197,11 +150,8 @@
                 <td>400px</td>
                 <td>
                   400×267 | 18.7 kb |{{ " " }}
-                  <a
-                    target="_blank"
-                    href="https://demo.cloudimg.io/width/400/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  <a target="_blank"
+                    href="https://demo.cloudimg.io/width/400/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg">link</a>
                 </td>
               </tr>
               <tr>
@@ -209,11 +159,8 @@
                 <td>800px</td>
                 <td>
                   800×533 | 58.1 kb |{{ " " }}
-                  <a
-                    target="_blank"
-                    href="https://demo.cloudimg.io/width/800/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  <a target="_blank"
+                    href="https://demo.cloudimg.io/width/800/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg">link</a>
                 </td>
               </tr>
 
@@ -223,11 +170,8 @@
                 <td>600px</td>
                 <td>
                   600×400 | 35.4 kb |{{ " " }}
-                  <a
-                    target="_blank"
-                    href="https://demo.cloudimg.io/width/600/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  <a target="_blank"
+                    href="https://demo.cloudimg.io/width/600/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg">link</a>
                 </td>
               </tr>
               <tr>
@@ -235,11 +179,8 @@
                 <td>1200px</td>
                 <td>
                   1200x800 | 119 kb |{{ " " }}
-                  <a
-                    target="_blank"
-                    href="https://demo.cloudimg.io/width/1200/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  <a target="_blank"
+                    href="https://demo.cloudimg.io/width/1200/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg">link</a>
                 </td>
               </tr>
 
@@ -249,11 +190,8 @@
                 <td>800px</td>
                 <td>
                   800×533 | 58.1 kb |{{ " " }}
-                  <a
-                    target="_blank"
-                    href="https://demo.cloudimg.io/width/800/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  <a target="_blank"
+                    href="https://demo.cloudimg.io/width/800/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg">link</a>
                 </td>
               </tr>
               <tr>
@@ -261,11 +199,8 @@
                 <td>1600px</td>
                 <td>
                   1600px×1066 | 200 kb |{{ " " }}
-                  <a
-                    target="_blank"
-                    href="https://demo.cloudimg.io/width/1600/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  <a target="_blank"
+                    href="https://demo.cloudimg.io/width/1600/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg">link</a>
                 </td>
               </tr>
 
@@ -275,11 +210,8 @@
                 <td>1200px</td>
                 <td>
                   1200x800 | 119 kb |{{ " " }}
-                  <a
-                    target="_blank"
-                    href="https://demo.cloudimg.io/width/1200/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  <a target="_blank"
+                    href="https://demo.cloudimg.io/width/1200/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg">link</a>
                 </td>
               </tr>
               <tr>
@@ -287,11 +219,8 @@
                 <td>2400px</td>
                 <td>
                   2400x1600 | 405 kb |{{ " " }}
-                  <a
-                    target="_blank"
-                    href="https://demo.cloudimg.io/width/2400/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg"
-                    >link</a
-                  >
+                  <a target="_blank"
+                    href="https://demo.cloudimg.io/width/2400/q35.foil1/https://cdn.scaleflex.it/demo/redcharlie.jpg">link</a>
                 </td>
               </tr>
             </tbody>
@@ -316,15 +245,12 @@
             for the screen size.
           </p>
         </div>
-        <div
-          class="container-fluid"
-          style="
+        <div class="container-fluid" style="
             maxwidth: 1200px;
             marginleft: auto;
             marginright: auto;
             paddingtop: 20px;
-          "
-        >
+          ">
           <div class="row images-in-columns">
             <div class="col-12">
               <div class="container-box-wrapper">
@@ -333,56 +259,41 @@
               </div>
             </div>
 
-            <div
-              v-for="(image, index) in imagesSliced"
-              :key="index"
-              class="col-6"
-            >
+            <div v-for="(image, index) in imagesSliced" :key="index" class="col-6">
               <div class="container-box-wrapper">
                 <ContainerBox />
                 <Img v-bind:src="image.src" />original:
                 <i>{{ image.original_size }}</i>
                 {{ " " }}
-                <a
-                  :href="
-                    'https://cdn.scaleflex.it/demo/' + image.src
-                  "
-                  target="_blank"
-                  >link</a
-                >
+                <a :href="
+                  'https://cdn.scaleflex.it/demo/' + image.src
+                " target="_blank">link</a>
                 <br />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6 col-lg-7">
-              <Img
-                :src="images[18].src"
-                :sizes="{
-                  '(max-width: 575px)': {
-                    src: 'https://img.scaleflex.com/truck.jpg',
-                    w: 400,
-                    h: 150,
-                  },
-                  '(min-width: 576px)': { r: 1 },
-                  '(min-width: 620px)': { h: 560 },
-                  '(min-width: 768px)': { w: '50vw' },
-                  '(min-width: 992px)': { w: '55vw', h: 300 },
-                  '(min-width: 1200px)': { w: 1200 },
-                }"
-              />
+              <Img :src="images[18].src" :sizes="{
+                '(max-width: 575px)': {
+                  src: 'https://img.scaleflex.com/truck.jpg',
+                  w: 400,
+                  h: 150,
+                },
+                '(min-width: 576px)': { r: 1 },
+                '(min-width: 620px)': { h: 560 },
+                '(min-width: 768px)': { w: '50vw' },
+                '(min-width: 992px)': { w: '55vw', h: 300 },
+                '(min-width: 1200px)': { w: 1200 },
+              }" />
               <small>
                 original:
                 <i>{{ images[18].original_size }}</i>
                 {{ " " }}
-                <a
-                  :href="
-                    'https://cdn.scaleflex.it/demo/' +
-                    images[18].src
-                  "
-                  target="_blank"
-                  >link</a
-                >
+                <a :href="
+                  'https://cdn.scaleflex.it/demo/' +
+                  images[18].src
+                " target="_blank">link</a>
                 <br />
               </small>
             </div>
@@ -411,15 +322,12 @@
                     <span>200</span>x <span>200</span>px
                   </div>
                 </div>
-                <div
-                  class="container-box-wrapper"
-                  style="
+                <div class="container-box-wrapper" style="
                     display: inline-block;
                     width: 200px;
                     height: 200px;
                     position: relative;
-                  "
-                >
+                  ">
                   <img src="https://doc.cloudimg.io/sample.li/boat.jpg" />
                   <div class="border-box" />
                 </div>
@@ -437,15 +345,12 @@
                   </div>
                 </div>
 
-                <div
-                  class="container-box-wrapper"
-                  style="
+                <div class="container-box-wrapper" style="
                     display: inline-block;
                     width: 200px;
                     height: 200px;
                     position: relative;
-                  "
-                >
+                  ">
                   <Img src="boat.jpg" params="func=crop" />
                   <div class="border-box" />
                 </div>
@@ -462,15 +367,12 @@
                     <span>200</span>x <span>200</span>px
                   </div>
                 </div>
-                <div
-                  class="container-box-wrapper"
-                  style="
+                <div class="container-box-wrapper" style="
                     display: inline-block;
                     width: 200px;
                     height: 200px;
                     position: relative;
-                  "
-                >
+                  ">
                   <Img src="boat.jpg" params="func=crop&gravity=auto" />
                   <div class="border-box" />
                 </div>
@@ -486,15 +388,10 @@
           <Prism>{{ syntaxHighlight5 }}</Prism>
         </div>
 
-        <BackgroundImg
-          :onImgLoad="onImgLoad"
-          src="ameen-fahmy.jpg"
-          params="func=crop"
-          :styles="{
-            background: 'transparent 50% 50% / cover no-repeat',
-            color: '#fff',
-          }"
-        >
+        <BackgroundImg :onImgLoad="onImgLoad" src="ameen-fahmy.jpg" params="func=crop" :styles="{
+          background: 'transparent 50% 50% / cover no-repeat',
+          color: '#fff',
+        }">
           <div style="background: rgba(0, 0, 0, 0.6); padding: 40px">
             <div class="container">
               <h2>What is Lorem Ipsum?</h2>
@@ -527,18 +424,12 @@
       </section>
       <section class="container">
         <div class="text-center">
-          <div
-            id="plugin-version-switcher"
-            class="plugin-version-switcher btn-group btn-toggle"
-          ></div>
+          <div id="plugin-version-switcher" class="plugin-version-switcher btn-group btn-toggle"></div>
         </div>
       </section>
       <section class="container">
         <div class="text-center">
-          <div
-            id="plugin-version-switcher"
-            class="plugin-version-switcher btn-group btn-toggle"
-          ></div>
+          <div id="plugin-version-switcher" class="plugin-version-switcher btn-group btn-toggle"></div>
         </div>
 
         <div id="js-version-box">
@@ -573,7 +464,7 @@
               <p>
                 <small>
                   NOTE: "ratio" is recommended to prevent page layout jumping.{{
-                    ""
+                      ""
                   }}
                   The parameter is used to calculate image height to hold the
                   image position while image is loading.
@@ -584,11 +475,8 @@
             <div class="action-wrapper forth-action">
               <p>
                 …and you're done!{{ " " }}
-                <a
-                  href="https://github.com/scaleflex/vue-cloudimage-responsive-plain#table-of-contents"
-                  target="_blank"
-                  >{{ " " }} Visit the full documentation here.</a
-                >
+                <a href="https://github.com/scaleflex/vue-cloudimage-responsive-plain#table-of-contents"
+                  target="_blank">{{ " " }} Visit the full documentation here.</a>
               </p>
             </div>
           </div>
@@ -608,51 +496,28 @@
         <div style="background: #fff">
           <section class="container ready-to-start filerobot-ui-family">
             <div class="row">
-              <div
-                class="col-sm-3 filerobot-ui-family-label"
-                style="max-width: 200px; min-width: 200px"
-              >
+              <div class="col-sm-3 filerobot-ui-family-label" style="max-width: 200px; min-width: 200px">
                 <h5>Filerobot UI family:</h5>
               </div>
-              <div
-                class="col-sm-9 filerobot-ui-family-libs"
-                style="max-width: 'calc(100% - 200px)'"
-              >
+              <div class="col-sm-9 filerobot-ui-family-libs" style="max-width: 'calc(100% - 200px)'">
                 <ul>
                   <li>
-                    <a
-                      target="_blank"
-                      href="https://github.com/scaleflex/js-cloudimage-responsive"
-                      >JS Cloudimage Responsive</a
-                    >
+                    <a target="_blank" href="https://github.com/scaleflex/js-cloudimage-responsive">JS Cloudimage
+                      Responsive</a>
                   </li>
                   <li>
-                    <a
-                      target="_blank"
-                      href="https://github.com/scaleflex/ng-cloudimage-responsive"
-                      >Angular Cloudimage Responsive</a
-                    >
+                    <a target="_blank" href="https://github.com/scaleflex/ng-cloudimage-responsive">Angular Cloudimage
+                      Responsive</a>
                   </li>
                   <li>
-                    <a
-                      target="_blank"
-                      href="https://github.com/scaleflex/js-cloudimage-360-view"
-                      >JS Cloudimage 360 view</a
-                    >
+                    <a target="_blank" href="https://github.com/scaleflex/js-cloudimage-360-view">JS Cloudimage 360
+                      view</a>
                   </li>
                   <li>
-                    <a
-                      target="_blank"
-                      href="https://github.com/scaleflex/filerobot-uploader"
-                      >Uploader</a
-                    >
+                    <a target="_blank" href="https://github.com/scaleflex/filerobot-uploader">Uploader</a>
                   </li>
                   <li>
-                    <a
-                      target="_blank"
-                      href="https://github.com/scaleflex/filerobot-image-editor"
-                      >Image Editor</a
-                    >
+                    <a target="_blank" href="https://github.com/scaleflex/filerobot-image-editor">Image Editor</a>
                   </li>
                 </ul>
               </div>
@@ -667,41 +532,28 @@
                 <div>
                   Made with ❤ in 2019 in Paris, Munich and Sofia by the
                   Scaleflex team, the guys behind{{ " " }}
-                  <a href="https://www.cloudimage.io/en/home" target="_blank"
-                    >Cloudimage.io</a
-                  >
+                  <a href="https://www.cloudimage.io/en/home" target="_blank">Cloudimage.io</a>
                   .
                 </div>
                 <div style="margin-top: 10px">
                   Powered by{{ " " }}
-                  <a href="https://www.scaleflex.it/en/home" target="_blank"
-                    >Scaleflex team</a
-                  >
+                  <a href="https://www.scaleflex.it/en/home" target="_blank">Scaleflex team</a>
                   . All rights reserved.
                 </div>
               </div>
               <div class="footer-menu col-sm-3">
                 <ul>
                   <li>
-                    <a
-                      href="https://github.com/scaleflex/vue-cloudimage-responsive-plain"
-                      target="_blank"
-                      >View GitHub</a
-                    >
+                    <a href="https://github.com/scaleflex/vue-cloudimage-responsive-plain" target="_blank">View
+                      GitHub</a>
                   </li>
                   <li>
-                    <a
-                      href="https://github.com/scaleflex/vue-cloudimage-responsive-plain/issues"
-                      target="_blank"
-                      >Current Issues</a
-                    >
+                    <a href="https://github.com/scaleflex/vue-cloudimage-responsive-plain/issues"
+                      target="_blank">Current Issues</a>
                   </li>
                   <li>
-                    <a
-                      href="https://github.com/scaleflex/vue-cloudimage-responsive-plain#table-of-contents"
-                      target="_blank"
-                      >Documentation</a
-                    >
+                    <a href="https://github.com/scaleflex/vue-cloudimage-responsive-plain#table-of-contents"
+                      target="_blank">Documentation</a>
                   </li>
                 </ul>
               </div>
@@ -758,6 +610,13 @@ export default {
   },
   // passing to config to provider
   props: ["cloudimageConfig"],
+  setup() {
+    const onImgLoad = Function;
+
+    return {
+      onImgLoad
+    }
+  },
   mounted() {
     const self = this;
 
@@ -852,6 +711,6 @@ const cloudimageConfigWithCustomCNAMEDomain = {
       devicePixelRatio: (window.devicePixelRatio || 1).toFixed(1),
     };
   },
-  
+
 };
 </script>
