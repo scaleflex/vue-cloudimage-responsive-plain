@@ -145,35 +145,36 @@ CDN traffic per month for free.
 using npm
 
 ```
- npm install vue-cloudimage-responsive vue-lazyload
+ npm install vue-cloudimage-responsive-plain vue-lazyload
 ```
 or using yarn
 
 ```
- yarn add vue-cloudimage-responsive vue-lazyload
+ yarn add vue-cloudimage-responsive-plain vue-lazyload
 ```
 
 ## <a name="initialize"></a>Step 2: Initialize
 
-After installing the vue-cloudimage-responsive lib, simply initialize it with your **token** and the **baseURL**
-of your image storage with **CloudimageProvider**:
-create vue instance a fle called main.js
+After installing the vue-cloudimage-responsive-plain lib, simply initialize it with your **token** and the **baseURL**
+of your image storage with **CloudImageProvider**:
+create vue instance a file called main.js
 
 ```js
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import VueLazyload from 'vue-lazyload'
+import VueLazyload from 'vue-lazyload';
 
-Vue.use(VueLazyload, {
+const app = createApp(App);
+
+app.use(VueLazyload, {
   lazyComponent: true
-})
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+});
+
+app.mount('#app');
 ```
 
 ```jsx
-import Img, { CloudimageProvider } from 'vue-cloudimage-responsive-plain';
+import Img, { CloudImageProvider } from 'vue-cloudimage-responsive-plain';
 
 const cloudimageConfig = {
   token: 'demo',
@@ -182,20 +183,26 @@ const cloudimageConfig = {
 
 <template>
  <div id="app">
-<CloudimageProvider  v-bind:cloudImageConfig="cloudimageConfig">
- <h1>Simple demo of vue-cloudimage-responsive</h1>
+<CloudImageProvider  v-bind:cloudImageConfig="cloudimageConfig">
+ <h1>Simple demo of vue-cloudimage-responsive-plain</h1>
 <Img src="img.jpg" alt="Demo image" />
-</CloudimageProvider>
+</CloudImageProvider>
 </div>
 </template>
 
 <script>
 export default{
-    components:{
-    CloudimageProvider,
-    Img
-    }
-}
+  name: "app",
+  components: {
+    CloudImageProvider,
+    Img,
+  },
+  data() { 
+    return { 
+      cloudimageConfig
+    };
+  },
+},
 </script>
 ```
 
@@ -216,7 +223,7 @@ the image position while image is loading.
 ### BackgroundImg component:
 
 ```html
-<BackgroundImg src="img.jpg"
+<BackgroundImg src="img.jpg">
   {'Your conent...'}
 </BackgroundImg>
 ```
