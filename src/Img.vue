@@ -1,5 +1,5 @@
 <template>
-  <img v-if="server" :alt="properties.alt" :src="BASE_64_PLACEHOLDER" />
+  <img v-if="server" :alt="properties.alt" />
   <lazy-component v-else-if="!server && properties.config.lazyLoading && lazyLoadActive" @show="handler">
     <img v-bind="{ ...otherProps }" v-bind:class="loadedStyle" v-bind:alt="properties.alt" @load="_onImgLoad"
       :width="getWidth(width)" :height="getHeight(height)" />
@@ -10,7 +10,6 @@
 
 <script>
 import { isServer, processReactNode, generateAlt } from "cloudimage-responsive-utils";
-import { BASE_64_PLACEHOLDER } from "cloudimage-responsive-utils/dist/constants";
 
 export default {
   // geting the data from the provider
@@ -32,7 +31,6 @@ export default {
   data() {
     return {
       server: isServer(),
-      BASE_64_PLACEHOLDER,
       lazyLoadActive: true,
       cloudimgURL: "",
       processed: false,
