@@ -1,10 +1,10 @@
 <template>
-  <img v-if="server" :alt="alt" :src="BASE_64_PLACEHOLDER" />
+  <img v-if="server" :alt="properties.alt" :src="BASE_64_PLACEHOLDER" />
   <lazy-component v-else-if="!server && properties.config.lazyLoading && lazyLoadActive" @show="handler">
-    <img v-bind="{ ...otherProps }" v-bind:class="loadedStyle" v-bind:alt="alt" @load="_onImgLoad"
+    <img v-bind="{ ...otherProps }" v-bind:class="loadedStyle" v-bind:alt="properties.alt" @load="_onImgLoad"
       :width="getWidth(width)" :height="getHeight(height)" />
   </lazy-component>
-  <img v-else v-bind:class="loadedStyle" v-bind:src="data.cloudimgURL" :srcset="cloudimgSRCSET" v-bind:alt="alt"
+  <img v-else v-bind:class="loadedStyle" v-bind:src="data.cloudimgURL" :srcset="cloudimgSRCSET" v-bind:alt="properties.alt"
     :width="getWidth(width)" :height="getHeight(height)" @load="_onImgLoad" />
 </template>
 
@@ -72,7 +72,7 @@ export default {
     } = this.properties;
 
     //initial loading style
-    this.loadedStyle = `${this.className} cloudimage-background loading`
+    this.loadedStyle = `${this.properties.className} cloudimage-background loading`
       .trim();
 
     if (typeof delay !== 'undefined') {
@@ -106,7 +106,6 @@ export default {
         imgNode,
         update,
         windowScreenBecomesBigger,
-        false
       );
       //if size is defined so data is defined if not error well appear
       if (data) {
@@ -167,7 +166,7 @@ export default {
     loaded: function (newVal) {
       const loaded = newVal;
 
-      this.loadedStyle = `${this.className} cloudimage-background ${loaded ? 'loaded' : 'loading'}`
+      this.loadedStyle = `${this.properties.className} cloudimage-background ${loaded ? 'loaded' : 'loading'}`
         .trim();
     },
   },

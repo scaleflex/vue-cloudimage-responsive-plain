@@ -66,7 +66,7 @@ export default {
     if (this.server) return;
 
     //initial loading style
-    this.loadedStyle = this.loadedStyle = `${this.className} cloudimage-background loading`
+    this.loadedStyle = this.loadedStyle = `${this.properties.className} cloudimage-background loading`
       .trim();
     //initial value combinedstyle
     this.combinedStyle = {
@@ -105,7 +105,7 @@ export default {
       const { onImgLoad } = this.properties;
 
       img.onload = function () {
-        onImgLoad();
+        onImgLoad;
       };
       img.src = cloudimgURL;
     },
@@ -160,7 +160,7 @@ export default {
         };
       }
       //if loaded change style to loaded
-      this.loadedStyle = `${this.className} cloudimage-background ${loaded ? 'loaded' : 'loading'}`
+      this.loadedStyle = `${this.properties.className} cloudimage-background ${loaded ? 'loaded' : 'loading'}`
         .trim();
     },
 

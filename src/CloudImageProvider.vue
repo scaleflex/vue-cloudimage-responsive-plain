@@ -20,6 +20,7 @@ export default {
         lazyLoadOffset:  this.cloudImageConfig.lazyLoadOffset || 100,
         placeholderBackground: this.cloudImageConfig.placeholderBackground || '#f4f4f4',
         baseURL: this.cloudImageConfig.baseUrl || this.cloudImageConfig.baseURL,
+        delay: this.cloudImageConfig.delay || 0,
         exactSize: false,
         presets: this.cloudImageConfig.presets
           ? this.cloudImageConfig.presets
