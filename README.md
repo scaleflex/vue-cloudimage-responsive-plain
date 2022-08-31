@@ -37,7 +37,7 @@
 		•
 		<a href="https://scaleflex.github.io/vue-cloudimage-responsive-plain/" target="_blank">Demo</a>
 		•
-		<a href="https://codesandbox.io/s/vue-cloudimage-responsive-example-b64iq4" target="_blank">Code Sandbox</a>
+		<a href="https://codesandbox.io/s/vue-cloudimage-responsive-example-nwbeby" target="_blank">Code Sandbox</a>
 		•
 		<a href="https://medium.com/@dmitry_82269/responsive-images-in-2019-now-easier-than-ever-b76e5a43c074" target="_blank">Why?</a>
 	</strong>
@@ -218,7 +218,7 @@ NOTE: "ratio" is recommended to prevent page layout jumping. The parameter is us
 the image position while image is loading.
 - you can also reference it with kabab-case : img
 
-<a href="https://codesandbox.io/s/vue-cloudimage-responsive-example-b64iq4"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
+<a href="https://codesandbox.io/s/vue-cloudimage-responsive-example-nwbeby"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
 ### BackgroundImg component:
 
@@ -229,7 +229,7 @@ the image position while image is loading.
 ```
 NOTE: you can also reference it with kabab-case : background-img
 
-<a href="https://codesandbox.io/s/vue-cloudimage-responsive-example-7dyqso"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
+<a href="https://codesandbox.io/s/vue-cloudimage-responsive-example-uieotm"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
 ## <a name="configuration"></a> Config
 
